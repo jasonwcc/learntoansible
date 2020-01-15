@@ -1,0 +1,110 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red47\green180\blue29;
+}
+{\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;\cssrgb\c20238\c73898\c14947;
+}
+{\info
+{\author Jason}
+{\*\copyright Jason 2019}}\paperw11900\paperh16840\margl1440\margr1440\vieww20180\viewh13200\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf2 \cb3 \CocoaLigature0 Gather each managed host's facts into /tmp/facts subdir\
+
+\b0 ansible -m setup all -t /tmp/facts\
+cd /tmp/facts\
+ls -l\
+cat <managed host>\
+
+\b \
+\
+\
+- name: get specific fact | information from managed hosts
+\b0 \
+  hosts: all\
+  become: yes\
+\
+  tasks:\
+  - name: get os family\
+    debug: \
+      var:  ansible_facts['os_family']\
+; to see all other available facts, see below\
+   - name: get the ip\
+     debug: "Hostname is \{\{ inventory_hostname \}\} and the IP address is \{\{ ansible_default_ipv4.address \}\}"\
+\
+
+\b - name: Obtain public ip from each hosts\
+
+\b0   hosts: all\
+  become: yes\
+\
+  tasks:\
+  - uri:\
+     url: http://ifconfig.me/ip\
+     return_content: yes\
+    register: ip_response\
+\
+  - debug:\
+        var: ip_response.content\
+\
+
+\b - name: Using Register and display its content
+\b0 \
+  become: yes\
+  hosts: all\
+  tasks:\
+  - name: find file ended with .txt\
+    shell: "find *.txt | cut -d '.' -f1 "\
+    args:\
+     chdir: /tmp\
+    register: filename\
+    ignore_errors: yes\
+\
+  - name: Display registered variables\
+    debug:\
+       msg: "\{\{ filename \}\}"\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf4 ok: [r8s1] => \{\cf2 \
+\cf4     "msg": \{\cf2 \
+\cf4         "changed": true, \cf2 \
+\cf4         "cmd": "find *.txt | cut -d '.' -f1 ", \cf2 \
+\cf4         "delta": "0:00:00.012374", \cf2 \
+\cf4         "end": "2019-12-30 14:19:21.685204", \cf2 \
+\cf4         "failed": false, \cf2 \
+\cf4         "rc": 0, \cf2 \
+\cf4         "start": "2019-12-30 14:19:21.672830", \cf2 \
+\cf4         "stderr": "", \cf2 \
+\cf4         "stderr_lines": [], \cf2 \
+\cf4         "stdout": "aaa\\nbbb", \cf2 \
+\cf4         "stdout_lines": [\cf2 \
+\cf4             "aaa", \cf2 \
+\cf4             "bbb"\cf2 \
+\cf4         ]\cf2 \
+\cf4     \}\cf2 \
+\cf4 \}\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\b \
+- name: Show cpu, memory and disk size\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \cb3  
+\f0\fs36 \cf2 \cb3  become: yes\
+  hosts: webservers\
+  tasks:\
+  - debug:\
+     msg: \
+       - "Total_Memory_size = \{\{ ansible_memtotal_mb \}\}"\
+       - "Total_Vcpus = \{\{ ansible_processor_vcpus \}\}"\
+       - "Disk_sda_size = \{\{ ansible_devices.sda.size \}\}"\
+       - "Disk_sdb_size = \{\{ ansible_devices.sdb.size \}\}"\
+       - "Disk_nvme0_size = \{\{ ansible_devices.nvme0n1.size \}\}"\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\b Other Facts\
+
+\b0 read Ansible - All Facts.rtf\
+ }

@@ -1,0 +1,194 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;}
+{\info
+{\author Jason}
+{\*\copyright Jason 2019}}\paperw11900\paperh16840\margl1440\margr1440\vieww14600\viewh14700\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf0 Rhel v8.1 - Installation\
+
+\b0 dnf -y install python2-pip\
+pip2 install --upgrade pip\
+pip2 install --upgrade ansible\
+ansible --version
+\b \
+\
+Ubuntu/Debian - Installation
+\b0 \
+sudo apt-get install software-properties-common\
+sudo apt-add-repository ppa:ansible/ansible\
+sudo apt-get update\
+sudo apt-get install ansible\
+ansible --version\
+\
+
+\b Create Ansible inventory file\
+
+\b0 mkdir /etc/ansible\
+cd /etc/ansible\
+vi hosts\
+[webserver]\
+172.16.8.2\
+\
+[appserver]\
+172.16.8.3\
+\
+[staging]\
+ansible -i hosts all -m ping\
+NOTE: You need to be in /etc/ansible to execute this ping. or else create the ansible.cfg to permanent call hosts from /etc/ansible\
+\
+
+\b Create Ansible.cfg\
+
+\b0 vi /etc/ansible/ansible.cfg\
+[defaults]\
+inventory	= /etc/ansible/hosts\
+fact_caching_prefix = ansible_facts\
+fact_caching_timeout = 300\
+\
+ansible all -m ping\
+NOTE: Now we do not need to specify -i unless you want specify different inventory file or host file\
+\
+
+\b Execute commands\
+
+\b0 ansible -m shell -a 'date;uname -rms;hostname' all\
+ \
+
+\b Create user using user module
+\b0 \
+ansible -b -K -m user -a 'name=testuser'  all\
+\
+NOTE : -b to sudo , -K ask for sudo password, -m user call user mode -a, execute the module command, in this we create a user call testuser\
+\
+\
+
+\b Create user using user module if only user not created
+\b0 \
+ansible -b -K -m user -a 'name=testuser state=absent' all\
+\
+\
+
+\b Use of roles\
+
+\b0 cd /etc/ansibles\
+mkdir -p roles/basic/tasks\
+\
+\
+
+\b Gathering Facts  and copy into dir ad hoc\
+
+\b0 ansible all -m setup --tree /tmp/facts\
+\
+
+\b Display msg\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\b0 \cf2 \cb3 \CocoaLigature0 - become: yes\
+  hosts: test\
+  tasks:\
+  - name: single line\
+    debug:\
+     msg: "Hello World"\
+\
+  - name: Multiple line without any help\
+    debug:\
+     msg: \
+      - "Hello World"\
+      - "Howdy everyone"\
+\
+  - name: 'Multiple line with |'\
+    debug:\
+     msg: |\
+      - "Hello World"\
+      - "Howdy everyone"\
+\
+  - name: Multiple line with >-\
+    debug:\
+      msg: >-\
+       "Hello World"\
+       "Howdy everyone"\cf0 \cb1 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+
+\b Using Main module using playbook\
+Create files and directories
+\b0 \
+- name: Create files using loop\
+  hosts: all\
+  become: yes\
+\
+  vars:\
+  filenames:\
+   - /tmp/foods/file1.txt\
+   - /tmp/fruits/file2.txt\
+   - /tmp/drinks/file3.txt\
+\
+   tasks:\
+   - name: Create directory using loop\
+     file:\
+        path: "/tmp/\{\{ item \}\}"\
+        state: directory\
+        mode: 0770\
+        owner: root\
+        group: finance\
+     with_items:\
+        - fruits\
+        - foods\
+        - drinks\
+\
+     - name: Create files using variables defined above\
+       file:\
+          path: "\{\{ item \}\}"\
+          mode: 0750\
+          owner: root\
+          group: finance\
+       with_items: "\{\{ filenames \}\}"\
+\
+
+\b Save result of data using register module\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \cb3 \CocoaLigature0 NOTE: For every subdir in /data, we create a symbolic link in /mnt/bkspool\
+\
+- name: check os n version\
+  become: yes\
+  hosts: all\
+  vars:\
+   foo: yes\
+\
+  tasks:\
+  - name: Check for /data\
+    command: ls /data\
+    register: data_dirs\
+\
+  - name: create dir\
+    file:\
+     path: /mnt/bkspool\
+     state: directory\
+\
+  - name:\
+    debug:\
+     msg: "\{\{ data_dirs \}\}"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \cb3 \CocoaLigature0   - name: add data subdirs to backup spooler\
+    file:\
+      path: /mnt/bkspool/\{\{ item \}\}\
+      src: /data/\{\{ item \}\}\
+      state: link\
+    loop: "\{\{ data_dirs.stdout_lines \}\}"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\
+\
+\
+\
+}
