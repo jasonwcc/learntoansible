@@ -1,0 +1,14 @@
+---
+- name: Create user 
+  become: true
+  hosts: all
+
+  vars:
+  - hpass: "{{ 'redhat' | password_hash('sha512') }}"
+
+  tasks:
+  - user:
+      name: "peter"
+      uid: 1234
+      password:  "{{ hpass }}"
+...
