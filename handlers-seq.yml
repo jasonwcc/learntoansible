@@ -1,0 +1,42 @@
+- name: Play to illustrate order of execution
+  hosts: localhost
+  
+  roles:
+  - role1
+  - role2
+
+  post_tasks:
+  - name: "Running post tasks"
+    file:
+      path: /tmp/post_task
+      state: touch
+    notify: post task handler
+
+  pre_tasks:
+  - name: "Running pre tasks"
+    file:
+      path: /tmp/pre_task
+      state: touch 
+    #debug:
+      #msg: "echo pre tasks"
+    notify: pre task handler
+
+  tasks:
+  - name: "Running main tasks"
+    shell:
+      cmd: "echo main tasks"
+    notify: main_task_handler
+
+  handlers:
+  - name: post task handler
+    debug:
+      msg: "post_tasks_handler"
+
+  - name: main_task_handler
+    debug:
+      msg: "main_tasks_handler"
+
+  - name: pre task handler
+    debug:
+      msg: "pretaskshandler"
+

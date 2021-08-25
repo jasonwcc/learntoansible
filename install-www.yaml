@@ -1,0 +1,17 @@
+---
+- name: Install web server
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Install needed packages
+    dnf:
+      name: httpd,mod_ssl
+      state: latest
+
+  - name: Start the service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+...

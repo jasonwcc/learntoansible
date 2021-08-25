@@ -1,0 +1,17 @@
+---
+# You may want to find out unconfigurednetwork interface on node1 first
+# > ansible node1 -m setup -a "gather_subset=network filter=ansible_interfaces"
+- name: Apply network configuration with RHEL network role
+  hosts: node1
+  vars:
+    network_connections:
+    - name: DBnic
+      state: up
+      type: ethernet
+      interface_name: ens224
+      autoconnect: yes
+      ip:
+        dhcp4: yes
+        auto6: no
+  roles:
+    - role: rhel-system-roles.network

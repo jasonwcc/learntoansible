@@ -1,0 +1,9 @@
+---
+- name: Populate /etc/hosts using template module
+  hosts: all
+  
+  tasks:
+  - template:
+      src: populate_etc_hosts.j2
+      dest: /etc/hosts2
+...

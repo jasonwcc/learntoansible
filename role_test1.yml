@@ -1,0 +1,5 @@
+---
+- name: use the role1
+  hosts: localhost
+  roles:
+  - role1

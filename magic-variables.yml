@@ -1,0 +1,14 @@
+---
+- name: Show msg with hostvars
+  hosts: all
+  become: yes
+
+  tasks:
+  - name : display msg
+    template:
+      src: magic-variables.j2
+      dest: /tmp/information.txt
+      owner: root
+      group: root
+      mode: '0666'
+...

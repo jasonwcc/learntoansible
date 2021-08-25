@@ -1,0 +1,16 @@
+- name: Instal and configure www
+  hosts: localhost
+
+  tasks:
+  - name: Install www service
+    yum:
+      name: httpe
+      state: latest
+    ignore_errors: yes
+
+  - name: Start and enable www
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+

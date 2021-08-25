@@ -1,0 +1,13 @@
+- name: Include role only if the managed host is RedHat
+  hosts: all
+
+  tasks:
+  #- name: Install some services
+    #debug:
+      #msg: "Installing DB and Web services now.."
+    #when: ansible_distribution == "RedHat"
+
+  - name: test
+    include_role: 
+      name: role1
+    when: ansible_distribution == "RedHat"

@@ -1,0 +1,18 @@
+---
+- hosts: node1
+  vars:
+    timesync_ntp_servers:
+      - hostname: 0.rhel.pool.ntp.org
+        iburst: yes
+      - hostname: 1.rhel.pool.ntp.org
+        iburst: yes
+    timezone: Asia/Kuala_Lumpur
+
+  roles:
+    - rhel-system-roles.timesync
+  tasks:
+    - name: Set timezone
+      timezone:
+        name: "{{ timezone }}"
+
+...

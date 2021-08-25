@@ -1,0 +1,24 @@
+This lines appears only if fqdn is r8s3.example.com
+{% if ansible_host == "r8s3.example.com" %}
+   Hostname             : {{ ansible_facts.fqdn }}
+   Total swap memory    : {{ ansible_memory_mb.swap.free }} MiB
+   Number of core(s)    : {{ ansible_processor_cores }} 
+{% endif %}
+
+This line appears only on nodes that is member of webservers
+{% if 'webservers' in group_names %}
+   Hostname             : {{ ansible_facts.fqdn }}
+   IP                   : {{ ansible_facts.default_ipv4.address }}
+{% endif %}
+
+This lines appears only if inventory_hostname is serverc
+{% if inventory_hostname == "serverc" %}
+   Hostname             : {{ ansible_facts.fqdn }}
+   /dev/sda             : {{ ansible_devices.sda.size | default("NONE") }}
+{% endif %}
+
+This lines appears on all nodes
+{% for host in groups['allservers'] %}
+   Hostname             : {{ hostvars[host]['ansible_facts']['hostname'] }}
+   Inventory_hostnam    : {{ hostvars[host]['inventory_hostname'] }}
+{% endfor %}

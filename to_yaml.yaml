@@ -1,0 +1,11 @@
+- name:
+  hosts: localhost
+
+  tasks:
+  - stat:
+      path: /etc/hosts
+    register: results
+
+  - debug:
+      msg: "{{ results | to_nice_yaml }}"
+

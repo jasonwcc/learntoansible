@@ -1,0 +1,16 @@
+- name: Testing out include or import tasks
+  hosts: localhost
+  
+  tasks:
+  - name: include web-tasks.yml
+    include_tasks: tasks_files/web-tasks.yml
+
+  - name: import db-tasks.yml
+    import_tasks: tasks_files/db-tasks.yml
+
+  - name: Enable firewall
+    service:
+      name: firewalld
+      state: started
+      enabled: yes
+

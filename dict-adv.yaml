@@ -1,0 +1,27 @@
+---
+- name: aaa
+  hosts: localhost
+  become: yes
+
+  vars:
+   db_users:
+     db1:
+      user: dbuser1
+      pass: "aaaaa"
+      accessible_from: localhost
+     db2:
+      user: dbuser2
+      pass: "bbbbb"
+      accessible_from: localhost
+
+
+  tasks:
+  - debug:
+      msg: item
+    with_dict: "{{ db_users }}"
+
+  - name: 'with_item: "{{ db_users.keys() }}"'
+    debug:
+     msg: item
+    with_items: "{{ db_users.keys() }}"
+

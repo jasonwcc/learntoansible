@@ -1,0 +1,15 @@
+---
+# tasks file for documentations
+- name: Create dir
+  file:
+    state: directory
+    mode: 750
+    owner: root
+    group: devops
+    path: /root/documentations
+
+- name: Clone gits for apache
+  git:
+    repo: 'https://gitlab.com/jasonwcc.my/learntoapache'
+    dest: /root/documentations
+    archive: /root/backup.zip

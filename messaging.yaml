@@ -1,0 +1,37 @@
+---
+- name: Displaying lines
+  hosts: localhost
+
+  tasks:
+  - name: singleline
+    debug:
+      msg: "hello world from {{ inventory_hostname }}"
+
+  - name: "multiline without anything"
+    debug: 
+      msg:
+       - "hello world "
+       - "from {{ inventory_hostname }}"
+
+  - name: "multiline with |"
+    debug:
+      msg: |
+        "hello world "
+        "from {{ inventory_hostname }}"
+
+  - name: multiline with >
+    debug:
+      msg: >
+        "hello world "
+        "from {{ inventory_hostname }}"
+
+  - name: Treat everything literal, escaping special char
+    debug:
+      msg: 'hello world from \{\{ inventory_hostname \}\}'
+
+  - name: custom message
+    debug:
+      msg: "{{ inventory_hostname }}\'s has space  < 500mb"
+
+...
+

@@ -1,0 +1,85 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+# CRC
+192.168.32.11	api.crc.testing default-route
+# K8s 
+192.168.32.91	master01 master01.example.com
+192.168.32.92	master02 master02.example.com
+192.168.32.93	master03 master03.example.com
+# Netapp ONtap
+192.168.32.150	cluster1 cluster1.example.com ot98
+192.168.32.151	c1n1 c1n1.example.com ot98
+192.168.32.152	c1n2 c1n2.example.com ot98
+192.168.32.143	cluster2 cluster2.example.com ot98
+192.168.32.144	c2n1 c2n1.example.com ot98
+192.168.32.145	c2n2 c2n2.example.com ot98
+192.168.32.160	cluster3 cluster3.example.com ot991
+192.168.32.161	c3n1 c3n1.example.com ot991
+192.168.32.162	c3n2 c3n2.example.com ot991
+192.168.32.153	svm1-lif1
+192.168.32.154	svm1-lif2
+192.168.32.155	svm1-lif3
+192.168.32.156	nfs-cifs-lifs-subnet
+192.168.32.159	nfs-cifs-lifs-subnet
+# Centos Linux 7
+192.168.32.1	c7s1 c7s1.example.com
+192.168.32.1	c7s2 c7s2.example.com
+192.168.32.1	c7s3 c7s3.example.com
+# Centos Linux 8
+192.168.32.164	c8s1 c8s1.example.com
+192.168.32.165	c8s2 c8s2.example.com
+192.168.32.166	c8s3 c8s3.example.com
+# RHv7
+192.168.32.171  r7s1 r7s1.example.com dbserver
+192.168.32.172  r7s2 r7s2.example.com dc1
+192.168.32.173  r7s3 r7s3.example.com dc2
+# RHv8
+192.168.32.181	r8s1 r8s1.example.com fileserver1
+192.168.32.182	r8s2 r8s2.example.com fileserver2
+192.168.32.183	r8s3 r8s3.example.com
+192.168.32.184	r8s4 r8s4.example.com
+# Oracle Linux 8
+192.168.32.201	o8s1 o8s1.example.com
+192.168.32.202	o8s2 o8s2.example.com
+192.168.32.203	o8s3 o8s3.example.com
+# Oracle Linux 7
+192.168.32.204	o7s1 o7s1.example.com
+192.168.32.205	o7s2 o7s2.example.com
+192.168.32.206	o7s3 o7s3.example.com
+# Ubuntu
+192.168.32.211	ubs1 ubs1.example.com
+192.168.32.212	ubs2 ubs2.example.com
+192.168.32.213	ubs3 ubs3.example.com
+# Windows Server
+192.168.32.253	wins1 wins1.example.com dns
+
+
+
+# Added by Docker Desktop
+192.168.0.70 host.docker.internal
+192.168.0.70 gateway.docker.internal
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
+

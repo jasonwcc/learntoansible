@@ -1,0 +1,6 @@
+- name: role1 main task
+  file:
+    path: /tmp/role1_main_task_file
+    state: touch
+  notify: role1 handler
+

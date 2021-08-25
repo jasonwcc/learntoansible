@@ -1,0 +1,21 @@
+- name: Use stat module
+  hosts: node1
+
+  vars:
+   files:
+     - filename: "/etc/hosts"
+     - filename: "/etc/passwd"
+  
+  tasks:
+  - stat:
+      path: "{{ item.filename }}"
+    register: result
+    loop: "{{ files }}"
+  
+  - debug:
+      #msg: "File - {{ result }}"
+      msg: 
+        - "Permission - {{ item.filename.mode }}"
+        - "Size - {{ item.size }}"
+        - "Checksum - {{ item.checksum }}"
+    loop: "{{ result }}"

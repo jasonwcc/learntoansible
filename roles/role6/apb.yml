@@ -1,0 +1,13 @@
+version: '1.0.0'
+name: role6
+description: your role description
+bindable: False
+async: optional
+metadata:
+  displayName: role6
+plans:
+  - name: default
+    description: This default plan deploys role6
+    free: True
+    metadata: {}
+    parameters: []

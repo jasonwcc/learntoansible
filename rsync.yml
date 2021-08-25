@@ -1,0 +1,16 @@
+---
+- name: Using synchronize module
+  hosts: webservers
+
+  tasks:
+  - name: install rsync package
+    dnf:
+      name: rsync
+      state: latest
+  
+  - name: sync between servera and serverb
+    synchronize:
+      src: /tmp/notes
+      dest: /tmp/notes
+    #delegate_to: "{{ inventory_hostname }}"
+    delegate_to: r8s3

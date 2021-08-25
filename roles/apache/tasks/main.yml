@@ -1,0 +1,13 @@
+---
+# tasks file for apache
+- name: Install Apache latest packages and other dependencies
+  yum:
+    name: "{{ item }}"
+    state: latest
+  loop: 
+  - httpd
+  - wget
+  - php
+  - python38
+  - python38-pip
+  notify: enable httpd

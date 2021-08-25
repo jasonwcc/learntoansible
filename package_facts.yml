@@ -1,0 +1,18 @@
+---
+- name: display installed packages
+  hosts: servera
+  gather_facts: no
+
+  tasks:
+  - name: gather info on installed packages
+    package_facts:
+      manager: auto
+
+  - name: List installed pckages
+    debug:
+      var: ansible_facts.packages
+    
+  - name: display network manager version
+    debug:
+      msg: "version {{ ansible_facts.packages.NetworkManager.0.version }}"
+    when: "'NetworkManager' in ansible_facts.packages"

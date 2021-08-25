@@ -1,0 +1,14 @@
+- name: Install package specify by remote host
+  hosts: servera
+
+  tasks:
+  - debug:
+      msg: >
+       Installing {{ ansible_facts.ansible_local.custom2.packages.name }}
+       packages on {{ ansible_facts.fqdn }}
+
+  - yum:
+      name: "{{ item }}"
+    loop: 
+    - "{{ ansible_facts.ansible_local.custom2.packages.name }}"
+

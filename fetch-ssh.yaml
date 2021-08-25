@@ -1,0 +1,16 @@
+---
+- name: Retrieve SSH key from managed hosts
+  hosts: node1,node2
+  
+  vars:
+   users:
+   - username: user1
+   - username: user2
+   
+  tasks:
+  - fetch:
+      src: "/home/{{ item.username }}/.ssh/id_rsa.pub"
+      dest: "files/keys/{{ item.username }}.pub-{{ inventory_hostname }}"
+      flat:  yes
+    loop: "{{ users }}"
+...

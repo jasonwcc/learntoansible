@@ -1,0 +1,10 @@
+- name: install db-service
+  dnf:
+   name: mysql-server
+   state: latest
+
+- name: start db-service
+  service:
+    name: mysqld
+    state: started
+    enabled: true

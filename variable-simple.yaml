@@ -1,0 +1,22 @@
+---
+- name: "Using vars and vars_files method"
+  hosts: localhost
+  
+
+  vars:
+   user: joe_1
+   home: /home/joe_1
+
+  vars_files: vars/users.yml
+
+  tasks:
+  - name: "Display message"
+    debug:
+       msg: "Creating {{ user }}"
+
+  - name: "Create user"
+    user: 
+      name: "{{ user }}"
+      home: "{{ home }}"
+      state: present
+...

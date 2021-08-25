@@ -1,0 +1,14 @@
+---
+- name: Using Find Module
+  hosts: webservers
+  
+  tasks:
+  - name: Find any text file with filename starts with info* /tmp
+    find:
+      paths: /tmp
+      patterns: 'info*'
+      use_regex: yes
+    register: results
+
+  - debug:
+      var: results

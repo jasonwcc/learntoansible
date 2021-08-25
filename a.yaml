@@ -1,0 +1,20 @@
+- name: 'This is install db service, configure var '
+  hosts: localhost
+  become: true
+
+  vars:
+    users:
+    - username: user1
+      groupname: salesgrp1
+    - username: user2
+      groupname: salesgrp2
+      
+  tasks:
+  - group:
+     name: salesgrp
+     state: present
+ 
+  - user:
+      name: jason
+      shell: /bin/ksh
+      group: salesgrp

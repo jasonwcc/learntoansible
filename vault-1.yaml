@@ -1,0 +1,29 @@
+---
+- name: Create user using users-list.txt and assign password from vaulted locked.yml
+  hosts: clients
+  become: yes
+  vars_files:
+  - files/users-list2.txt
+  - locked.yml
+
+  tasks:
+  - name: Create groups
+    group:
+      name: "{{ item.groupname }}"
+      state: present
+    loop: "{{ users }}"
+
+  - name: Create users
+    user:
+     name: "{{ item.username }}"
+     group: "{{ item.groupname }}"
+    loop: "{{ users }}"
+
+  - name: Set passwords
+    user:
+     name: "{{ item.username }}"
+     password: "{{ item.pw | password_hash('sha512') }}"
+     update_password: always
+    loop: "{{ passwords }}"
+... 
+

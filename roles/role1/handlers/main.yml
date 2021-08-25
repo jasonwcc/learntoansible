@@ -1,0 +1,4 @@
+- name: role1 handler
+  file:
+    path: /tmp/role1_handler_file
+    state: touch

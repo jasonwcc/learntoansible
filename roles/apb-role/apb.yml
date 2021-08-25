@@ -1,0 +1,13 @@
+version: '1.0.0'
+name: apb-role
+description: your role description
+bindable: False
+async: optional
+metadata:
+  displayName: apb-role
+plans:
+  - name: default
+    description: This default plan deploys apb-role
+    free: True
+    metadata: {}
+    parameters: []

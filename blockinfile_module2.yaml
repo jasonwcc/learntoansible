@@ -1,0 +1,16 @@
+---
+- name: Add mappings to /etc/hosts
+  hosts: localhost
+
+  tasks:
+  - blockinfile:
+      path: files/hosts
+      block: |
+        {{ item.ip }} {{ item.name }}
+      marker: "# {mark} Added by J {{ item.name }}"
+    loop:
+      - { name: host1, ip: 10.10.1.10 }
+      - { name: host2, ip: 10.10.1.11 }
+      - { name: host3, ip: 10.10.1.12 }
+...
+

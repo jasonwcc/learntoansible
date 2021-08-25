@@ -6,7 +6,7 @@
   vars:
   - hpass: "{{ 'redhat' | password_hash('sha512') }}"
 
-  vars_files: users-list.txt
+  vars_files: files/users-list.txt
 
   tasks:
   - group:

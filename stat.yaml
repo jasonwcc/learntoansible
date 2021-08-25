@@ -1,0 +1,17 @@
+- name: Use stat module
+  hosts: servera
+
+  vars:
+    filename: "/etc/hosts"
+
+  tasks:
+  - stat:
+      path: "{{ filename }}"
+    register: result
+  
+  - debug:
+     #msg: "File {{ filename }} - {{ result }}"
+      msg: 
+        - "Permission - {{ result.stat.mode }}"
+        - "Size - {{ result.stat.size }}"
+        - "Checksum - {{ result.stat.checksum }}"

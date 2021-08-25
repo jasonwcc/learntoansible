@@ -1,0 +1,10 @@
+- name: install web-service
+  dnf:
+   name: httpd
+   state: latest
+
+- name: Start the service
+  service:
+   name: httpd
+   enabled: true
+   state: restarted

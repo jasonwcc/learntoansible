@@ -1,0 +1,9 @@
+--- 
+- name: install httpd
+  hosts: localhost
+  tasks:
+  - name: using package module
+    package:
+      name: wget,git,vim
+      state: latest
+      use: yum
