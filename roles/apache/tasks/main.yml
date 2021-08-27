@@ -1,19 +1,18 @@
 ---
-- name: Install apache package
+- name: Create Custom Role
   dnf:
     name: httpd
     state: present
 
-- name: Configure firewall
+- name: Add rules
   firewalld:
-    immediate: yes
-    permanent: yes
-    state: enabled
     service: http
-  #when: "{{ inventory_hostname}} in groupnames['webservers']"
+    permanent: yes
+    immediate: yes
+    state: enabled
 
-- template:
+- name: templating
+  template:
     src: index.j2
-    dest: /var/www/html/index.html
+    dest: /var/www/html/index.html 
 ...
-

@@ -1,0 +1,7 @@
+users:
+- name: ali
+  description: developer
+- name: peter
+  description: manager
+- name: sandy
+  description: developer

@@ -1,0 +1,42 @@
+---
+- name: Create users and gorups 
+  hosts: all
+  
+  vars:
+    groupn:
+    - developer
+    - manager
+    - devops
+    - opsmgr
+
+  vars_files: 
+  - users_list.txt
+  - locker.yml
+
+  tasks:
+  - group:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ groupn }}"
+
+  - user: 
+       name: "{{ item.name }}"
+       group: "{{ item.description }}"
+       groups: devops
+       state: present
+       password: "{{ dev | password_hash('sha512')}}"
+    loop: "{{ users }}"
+    when: item.description == "developer"
+  
+  - user: 
+       name: "{{ item.name }}"
+       group: "{{ item.description }}"
+       groups: opsmgr
+       state: present
+       password: "{{ test | password_hash('sha512')}}"
+    loop: "{{ users }}"
+    when: item.description == "manager"
+
+
+
+

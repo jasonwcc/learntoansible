@@ -1,0 +1,22 @@
+---
+- name: Install pacakges based on hosts
+  hosts: dev,test,prod
+  vars:
+  hostgroups:
+  - group: dev,test,prod
+    packages: mariadb,php
+    state: present
+  - group: dev  
+    packages: "@RPM Development Tools"
+    state: present
+  - group: dev  
+    packages: "*"
+    state: latest
+
+  tasks:
+  - dnf:
+      name: "{{ item.packages }}"
+      state: "{{ item.state }}"
+    loop: "{{ hostgroups }}"
+    when: inventory_hostname in groups['dev']
+  
