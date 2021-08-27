@@ -1,0 +1,21 @@
+node1	ansible_host=172.16.1.101
+node2	ansible_host=172.16.1.102
+node3	ansible_host=172.16.1.103
+node4	ansible_host=172.16.1.104
+node5	ansible_host=172.16.1.105
+
+[dev]
+node1
+
+[test]
+node2
+
+[prod]
+node3
+node4
+
+[balancer]
+node5
+
+[webservers:children]
+prod

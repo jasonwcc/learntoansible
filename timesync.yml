@@ -1,10 +1,11 @@
+---
+- name: Configure time
+  hosts: servera
 
-- name: Configure time synchronization with NTP servers
-  hosts: all
   vars:
     timesync_ntp_servers:
-      - hostname: 172.24.16.253
-        iburst: yes
-  roles:
-    - rhel-system-roles.timesync
+    - hostname: 172.16.2.214
+      iburst: yes
 
+  roles:
+  - rhel-system-roles.timesync
