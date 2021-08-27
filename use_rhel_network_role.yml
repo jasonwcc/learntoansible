@@ -2,7 +2,7 @@
 # You may want to find out unconfigurednetwork interface on node1 first
 # > ansible node1 -m setup -a "gather_subset=network filter=ansible_interfaces"
 - name: Apply network configuration with RHEL network role
-  hosts: node1
+  hosts: servera
   vars:
     network_connections:
     - name: DBnic

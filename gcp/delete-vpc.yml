@@ -1,0 +1,24 @@
+---
+- name: Use of gcp_compute_network
+  hosts: localhost
+  
+  vars:
+   projectid: qwiklabs-gcp-00-6f3beaf32a99 
+   zone: asia-southeast1-a
+   region: asia-southeast1
+   keyfile: files/qwiklab.json
+   vpc_network: vpc2
+   vmname: finance-vm2
+
+  vars_files: files/resources.yml
+
+  tasks:
+  - name: Delete VPC networks
+    gcp_compute_network:
+      name: "{{ item.vpcname }}"
+      project: "{{ projectid }}"
+      auth_kind: serviceaccount
+      service_account_file: "{{ keyfile }}"
+      state: absent
+    loop: "{{ vpcs }}"
+

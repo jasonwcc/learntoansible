@@ -1,0 +1,14 @@
+- name: Query ansible_devices
+  hosts: servera
+  become: yes
+
+  vars:
+    disk: nvme0n1
+
+  tasks:
+  - name: Collect more info
+    debug:
+      msg: "{{ item }}"
+    with_dict: "{{ ansible_devices }}"
+    when: item.key == disk
+

@@ -1,0 +1,28 @@
+vms:
+- vmname: centos-vm1
+  bootdisksize: 20
+  vpc: hr-network
+  zone: asia-southeast1-a
+- vmname: centos-vm2
+  bootdisksize: 35
+  vpc: sales-network
+  zone: asia-southeast1-b
+- vmname: ubuntu-vm3
+  bootdisksize: 20
+  vpc: hr-network
+  zone: asia-southeast1-c
+- vmname: centos-vm3
+  bootdisksize: 35
+  vpc: dmz-network
+  zone: asia-southeast1-a
+
+vpcs:
+- vpcname: hr-network
+  mode: true
+  desc: "Network for the HR Team"
+- vpcname: sales-network
+  mode: true
+  desc: "Network for the Sales Team"
+- vpcname: dmz-network
+  mode: false
+  desc: "Network for the Demilitarized Zone"

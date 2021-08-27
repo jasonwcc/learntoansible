@@ -1,0 +1,34 @@
+---
+- name: Use of gcp_compute_firewall
+  hosts: localhost
+  
+  vars:
+   projectid: qwiklabs-gcp-00-6f3beaf32a99 
+   zone: asia-southeast1-a
+   region: asia-southeast1
+   keyfile: files/qwiklab.json
+   vpc_network: vpc2
+   vmname: finance-vm2
+
+  tasks:
+  #- name: Create VPC network
+    #include_playbook: create-vpc.yml
+    #register: network
+
+  - name: Add firewall rule
+    gcp_compute_firewall:
+      name: "allow-icmp-from-hr-net"
+      #network: "{{ network }}"
+      allowed:
+      - ip_protocol: all
+      source_ranges: "192.168.0.0/24"
+      project: "{{ projectid }}"
+      auth_kind: serviceaccount
+      service_account_file: "{{ keyfile }}"
+      state: present
+    register: rule
+    
+  - name: Display added rule
+    debug:
+      var: rule
+...

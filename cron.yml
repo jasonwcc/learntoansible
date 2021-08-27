@@ -1,0 +1,21 @@
+--- 
+- name: Add jobs into cron to managed hosts
+  hosts: servera
+
+  tasks:
+  - name: reboot system according to maintenance window
+    cron:
+      name: reboot1
+      day: "1-10,15-20"
+      month: "1,3,6"
+      hour: "17"
+      minute: "00"
+      user: root
+      job: "/usr/sbin/shutdown -Fr now"
+  
+  - name: Execute a script to clean up /tmp
+    cron:
+      name: clean1
+      minute: "*/5"
+      hour: "3-5"
+      job: "/opt/myscripts/clean.sh"

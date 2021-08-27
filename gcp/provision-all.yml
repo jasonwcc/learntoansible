@@ -1,0 +1,100 @@
+---
+- name: Configure few machines
+  hosts: localhost
+  
+  vars:
+   projectid: qwiklabs-gcp-00-6f3beaf32a99 
+   zone: asia-southeast1-a
+   region: asia-southeast1
+   keyfile: files/mykey.json
+   vpc_network: vpc1
+   vmname: finance-vm1
+
+  tasks:
+  - name: Create disks
+    gcp_compute_disk:
+      name: "{{ vmname }}-disk"
+      project: "{{ projectid }}"
+      size_gb: 30
+      source_image: projects/confidential-vm-images/global/images/centos-8-v20210721
+      zone: "{{ zone }}"
+      auth_kind: serviceaccount
+      service_account_file: "{{ keyfile }}"
+      state: present
+    register: disk
+
+  - name: Create VPC network
+    gcp_compute_network:
+      name: "{{ vpc_network }}"
+      project: "{{ projectid }}"
+      auth_kind: serviceaccount
+      service_account_file: "{{ keyfile }}"
+      auto_create_subnetworks: yes
+      #routing_config: See documentations ;)
+      state: present
+    register: network
+
+  - name: Create pub ip
+    gcp_compute_address:
+      name: "address-for-{{ vmname }}"
+      region: "{{ region }}"
+      project: "{{ projectid }}"
+      service_account_file: "{{ keyfile }}"
+      auth_kind: serviceaccount
+      state: present
+    register: address
+
+  - name: Create instance
+    gcp_compute_instance:
+      name: "{{ vmname }}"
+      #scopes:
+        #- https://www.googleapis.com/auth/compute
+      zone: "{{ zone }}"
+      project: "{{ projectid }}"
+      auth_kind: serviceaccount
+      service_account_file: "{{ keyfile }}"
+      state: present
+      machine_type: n1-standard-1
+      labels:
+        contact: "jason"
+        number: "0123456789"
+        env: "test"
+      disks:
+        - boot: true
+          source: "{{ disk }}"
+          auto_delete: true
+      network_interfaces:
+      - network: "{{ network }}"
+        access_configs:
+        - name: external nat
+          nat_ip: "{{ address }}"
+          type: ONE_TO_ONE_NAT
+      tags:
+        items: https-server,http-server
+    register: instance
+
+  - name: Add firewall rule
+    gcp_compute_firewall:
+      name: "allow-all-traffic"
+      network: "{{ network }}"
+      allowed:
+      - ip_protocol: all
+      source_ranges: "0.0.0.0/0"
+      project: "{{ projectid }}"
+      auth_kind: serviceaccount
+      service_account_file: "{{ keyfile }}"
+      state: present
+    register: rule
+    
+  - name: Display disk
+    debug:
+      var: disk
+
+  - name: Display network
+    debug:
+      var: network
+
+  - name: Display instance
+    debug:
+      var: instance
+

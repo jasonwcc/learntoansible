@@ -1,8 +1,2 @@
 ---
 # handlers file for apache
-- name: enable httpd
-  service:
-    name: httpd
-    enabled: yes
-    state: restarted
-

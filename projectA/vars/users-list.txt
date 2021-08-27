@@ -1,0 +1,16 @@
+users:
+- username: nfs-user1
+  groupname: sales_g
+  shellname: /bin/bash
+  genssh: yes
+  use_sudo: no
+- username: nfs-user2
+  groupname: hr_g
+  shellname: /bin/ksh
+  genssh: yes
+  use_sudo: yes
+- username: nfs-user3
+  groupname: sales_g
+  shellname: /bin/bash
+  genssh: no
+  use_sudo: yes

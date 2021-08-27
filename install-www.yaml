@@ -2,12 +2,21 @@
 - name: Install web server
   hosts: all
   become: true
+  vars:
+   packages:
+    - mod_ssl
+    - vim
+    - httpd
 
   tasks:
-  - name: Install needed packages
+  # This is for hr, ......
+  # .....
+  # ....
+  - name: Install pckgs
     dnf:
-      name: httpd,mod_ssl
+      name: "{{ item }}"
       state: latest
+    loop: "{{ packages }}" 
 
   - name: Start the service
     service:

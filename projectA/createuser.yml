@@ -1,0 +1,46 @@
+---
+- name : Create groups and users from user.list
+  become: yes
+  hosts: 'server?'
+  vars_files: vars/users-list.txt
+
+  tasks:
+  - name: Create group 
+    group:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - sales_g
+      - hr_g
+      - it_g
+
+  #- include_vars: users-list.txt
+  - name: Adding users
+    user:
+     name: "{{ item.username }}"
+     shell: "{{ item.shellname }}"
+     group: "{{ item.groupname }}"
+     generate_ssh_key: yes
+     createhome: yes
+     comment: "Created by create.user.yml"
+    with_items: "{{ users }}"
+
+  # Update sudoers if user is granted
+  - name: Update sudoers 
+    lineinfile:
+      dest: /etc/sudoers
+      state: present
+      insertafter: EOF
+      line: '{{ item.username }} ALL=(ALL) NOPASSWD: ALL'
+      regexp: '^{{ item.username }}.*'
+    when:  item.use_sudo == "yes"
+    with_items: '{{ users }}'
+
+  # Copy users public key from managed hosts
+  - name: Copy pub key
+    fetch:
+      src: "/home/{{ item.username }}/.ssh/id_rsa.pub"
+      dest: "keys/{{ item.username }}.pub-{{ inventory_hostname }}"
+      flat: yes
+    loop: "{{ users }}"
+  

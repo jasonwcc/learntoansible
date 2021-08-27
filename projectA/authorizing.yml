@@ -1,0 +1,13 @@
+# Authorized user if their pub key is in the pub_keys/ subdirectory
+---
+- name: Authorized user 
+  hosts: servera
+  vars_files: vars/users-list.txt
+
+  tasks:
+  authorized_key:
+      user: "{{ item.username }}"
+      key: "{{ lookup('file', 'keys/{{ item }}') }}"
+    loop: "{{ users }}"
+    with_fileglob:
+    - "keys/nfs-user-*"

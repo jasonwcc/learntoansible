@@ -1,0 +1,23 @@
+---
+- name: GCP
+  hosts: localhost
+
+  tasks:
+  - yum_repository:
+      name: google-cloud-sdk
+      baseurl: "https://packages.cloud.google.com/yum/repos/cloud-sdk-el8-x86_64"
+      enabled: yes
+      description: "Google Cloud SDK"
+      file: google-cloud
+      gpgcheck: no
+    
+  - name: install sdk
+    dnf:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - google-cloud-sdk
+    - kubectl
+    - google-cloud-sdk-app-engine-python
+    - google-cloud-sdk-bigtable-emulator
+

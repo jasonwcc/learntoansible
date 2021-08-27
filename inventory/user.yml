@@ -1,0 +1,8 @@
+---
+- name: Create system acc
+  hosts: localhost
+  tasks:
+  -  user:
+       name: abu
+       system: yes
+       state: present

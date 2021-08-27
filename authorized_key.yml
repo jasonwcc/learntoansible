@@ -1,0 +1,11 @@
+# Authorized user if their pub key is in the pub_keys/ subdirectory
+---
+- name: Authorized user 
+  hosts: server?
+  vars_files: files/users-list.txt
+
+  tasks:
+  - authorized_key:
+      user: "{{ item.username }}"
+      key: "{{ lookup('file', 'keys/allusers.pub') }}"
+    loop: "{{ users }}"

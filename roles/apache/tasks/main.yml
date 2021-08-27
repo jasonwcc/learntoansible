@@ -1,13 +1,19 @@
 ---
-# tasks file for apache
-- name: Install Apache latest packages and other dependencies
-  yum:
-    name: "{{ item }}"
-    state: latest
-  loop: 
-  - httpd
-  - wget
-  - php
-  - python38
-  - python38-pip
-  notify: enable httpd
+- name: Install apache package
+  dnf:
+    name: httpd
+    state: present
+
+- name: Configure firewall
+  firewalld:
+    immediate: yes
+    permanent: yes
+    state: enabled
+    service: http
+  #when: "{{ inventory_hostname}} in groupnames['webservers']"
+
+- template:
+    src: index.j2
+    dest: /var/www/html/index.html
+...
+

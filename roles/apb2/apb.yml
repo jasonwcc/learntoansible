@@ -1,0 +1,13 @@
+version: '1.0.0'
+name: apb2
+description: your role description
+bindable: False
+async: optional
+metadata:
+  displayName: apb2
+plans:
+  - name: default
+    description: This default plan deploys apb2
+    free: True
+    metadata: {}
+    parameters: []

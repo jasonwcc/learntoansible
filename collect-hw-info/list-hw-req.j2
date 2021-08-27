@@ -1,0 +1,18 @@
+Processor information
+Total CPU               : {{ ansible_processor_cores }}
+Total vCPU              : {{ ansible_processor_vcpus }}
+
+Memory information
+Total RAM       	: {{ ansible_memtotal_mb }} MiB
+Total Free RAM  	: {{ ansible_memfree_mb }} MiB
+Total Used RAM  	: {{ ansible_memory_mb.real.used }} MiB
+
+SWAP Memory information
+Total SWAP     	: {{ ansible_memory_mb.swap.total }} MiB
+Total Used SWAP 	: {{ ansible_memory_mb.swap.used }} MiB
+Total Free SWAP 	: {{ ansible_memory_mb.swap.free }} MiB
+
+Disks information
+/dev/sda      	  	: {{ ansible_devices.sda.size | default("NONE") }}
+/dev/sdb       		: {{ ansible_devices.sdb.size | default("NONE") }}
+/dev/sdg       		 : {{ ansible_devices.sdg.size | default("NONE") }}

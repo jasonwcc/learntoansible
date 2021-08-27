@@ -1,0 +1,21 @@
+---
+- name: Collect information
+  become: yes
+  hosts: webservers
+
+  tasks:
+  - name: Create automation users
+    user:
+      name: automation
+      state: present
+
+  - name: use template from list-hw-req.j2
+    template: 
+      src: list-hw-req.j2
+      dest: list-hw.{{ ansible_facts.hostname }}.txt
+      owner: automation
+      group: automation
+      mode: '0600'
+
+...
+

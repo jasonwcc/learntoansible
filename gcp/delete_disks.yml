@@ -1,0 +1,22 @@
+---
+- name: Test of gcp_compute_disk module
+  hosts: localhost
+  vars:
+    projectid: qwiklabs-gcp-00-6f3beaf32a99
+    zone: asia-southeast1-a
+    region: asia-southeast1
+    keyfile: "files/qwiklab.json"
+
+  vars_files: files/resources.yml
+   
+  tasks:
+  - name: "Delete disks created earlier" 
+    gcp_compute_disk:
+     name: "{{ item.vmname }}-disk"
+     zone: "{{  item.zone }}"
+     project: "{{ projectid }}"
+     state: absent
+     auth_kind: serviceaccount
+     service_account_file: "{{ keyfile }}"
+    loop: "{{ vms }}"
+         

@@ -1,0 +1,7 @@
+hostname={{ ansible_facts.hostname }}
+Total Free RAM= {{ ansible_memfree_mb }} 
+Total Used RAM= {{ ansible_memory_mb.real.used }}
+Total CPU= {{ ansible_processor_cores }}
+sda_disk_space= {{ ansible_devices.sda.size | default("NONE") }}
+sdb_disk_space= {{ ansible_devices.sdb.size | default("NONE") }}
+hda_disk_space= {{ ansible_devices.hda.size | default("NONE") }}
