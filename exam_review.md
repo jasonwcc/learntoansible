@@ -6,6 +6,7 @@ rol.redhat.com
 
 
 ### Exam
+```
 - EX294 --> RHCE 
   performance-based (cli)
   yaml + jinja2
@@ -17,12 +18,14 @@ rol.redhat.com
   Rhn ID + password
   IC 
   ask series questions
-  
+```
+
 The exam environment
+```
 - You will be started at workstation (desktop)
 - full network connectivity other virtual machines
-= Click RedHat icon on activies menu to proceed to 
-system configuration and exam tasks
+= Click RedHat icon on activies menu to proceed to system configuration and exam tasks
+```
 
 System Configurations:
 ```
@@ -46,6 +49,7 @@ All roles must be located /home/greg/ansible/roles
 ```
 
 Prepare control node (incl. test):
+```
 From workstation login into control node using greg 
 account
 # ssh greg@172.24.16.11
@@ -75,7 +79,7 @@ ssh-copy-id greg@172.24.16.6
 <password: devops>
 
 Remember: use root account ONLY for troubleshooting
-
+```
 
 Task 1: Configure inventory with following grouping
 ```
