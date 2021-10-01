@@ -78,27 +78,29 @@ Remember: use root account ONLY for troubleshooting
 
 
 Task 1: Configure inventory with following grouping
+```
 - node1 is a member of dev host group
 - node2 is a member of test host group
 - node3 and node4 is a member of prod host group
 - node5 is a member of balancer host group
 - prod group is a child group of webservers
+```
 
 Answer:
-
+```
 
 Task 2: Install ansible
 
 Answer:
+```
 sudo yum install -y ansible
-
+```
 Verify:
 ansible all -m ping
 ansible-inventory --graph
 
 Task 3: Adhoc command
-"
-
+```
 Repository 1: 
 	Name: EX294-BASE
 	Description: EX294 base software
@@ -114,24 +116,27 @@ Repository 2:
 	GPG Check : Yes
 	GPG Key : https://rhgls.realm13.example.com/keys/redhat-release
 	Must be enabled
+```
 
 Answer:
+```
 vi /home/greg/ansible/adhoc.sh
 chmod +x /home/greg/ansible/adhoc.sh
+```
 
 Verify:
-cd /home/greg/ansible
+```cd /home/greg/ansible
 ./adhoc.sh
 BECOME : devops
 
 ssh root@172.24.16.6
 ls /etc/yum.repos.d
 dnf list
+```
 
-LPI
 
 Task 4: Download and Install a Galaxy Roles
-
+```
 Create ansible/requirements.txt to download
 and install below roles. 
 NOTE: Make sure to use name below
@@ -140,8 +145,9 @@ NOTE: Make sure to use name below
   
 - URL	: https://rhgls.realm13.example.com/haproxy.tar
   Name  : balancer
-  
+```  
 Answer:
+```
 vi /home/greg/ansible/requirements.txt
 - src: https://rhgls.realm13.example.com/phpinfo.tar
   name: phpinfo
@@ -152,14 +158,17 @@ cd /home/greg/ansible
 ansible-galaxy install -r requirements.txt -p roles
 cd roles
 ls -ltr
+```
 
 Task 5: Use RHEL System Role
+```
 Create ansible/timesync.yml to perform following:
 - Use existing NTP Provider
 - Use 172.24.16.253 as NTP Server
 - Use the iburst parameter
-
+```
 Answer:
+```
 sudo dnf -y install rhel-system-roles 
 rpm -ql rhel-system-roles
 cd /usr/share/ansible/roles/
@@ -185,7 +194,7 @@ ansible-playbook timesync.yml
 Verify:
  systemctl status chronyd
  chronyc sources -v
- 
+```
   
 Task 6: Use the galaxy roles
 Create ansible/role.yml to perform 
