@@ -1,11 +1,4 @@
-rol.redhat.com
-- 90 days
-- 80 hours
-- 
-
-
-
-### Exam
+### Exam Objectives
 ```
 - EX294 --> RHCE 
   performance-based (cli)
@@ -16,7 +9,7 @@ rol.redhat.com
   exam - remote or testing center 
   usb Camera logitech 
   Rhn ID + password
-  IC 
+  Present IC  when asked
   ask series questions
 ```
 
@@ -70,11 +63,6 @@ autocmd FileType setlocal yaml,yml,j2 ts=2 sts=2 sw=2 expandtab
 From control node, ssh to each managed nodes 
 - test whether it is passwordless
 
-ssh greg@172.24.16.6
-Yes
-ssh greg@172.24.16.7
-Yes
-
 ssh-copy-id greg@172.24.16.6
 <password: devops>
 
@@ -92,6 +80,27 @@ Task 1: Configure inventory with following grouping
 
 Answer:
 ```
+node1 ansible_host=172.24.16.6
+node2 ansible_host=172.24.16.7
+node3 ansible_host=172.24.16.8
+node4 ansible_host=172.24.16.9
+node5 ansible_host=172.24.16.10
+
+[dev]
+node1
+
+[test]
+node2
+
+[prod]
+node3
+node4
+
+[balancer]
+node5
+
+[webservers:children]
+prod
 ```
 Task 2: Install ansible
 
@@ -125,13 +134,17 @@ Repository 2:
 Answer:
 ```
 vi /home/greg/ansible/adhoc.sh
+#!/bin/bash
+ansible all -b -K -m yum repository -a 'name="EX294-BASE" description="EX294 base software" baseurl="https://rhgls.realm13.example.com/BaseOS" gpgcheck=yes gpgkey="https://rhgls.realm13.example.com/keys/redhat-release" enabled=yes'
+ansible all -b -K -m yum repository -a 'name="EX294-STREAM" description="EX294 stream software" baseurl="https://rhgls.realm13.example.com/AppStream" gpgcheck=yes gpgkey="https://rhgls.realm13.example.com/keys/redhat-release" enabled=yes'
+
 chmod +x /home/greg/ansible/adhoc.sh
 ```
 
 Verify:
-```cd /home/greg/ansible
+```
+cd /home/greg/ansible
 ./adhoc.sh
-BECOME : devops
 
 ssh root@172.24.16.6
 ls /etc/yum.repos.d
@@ -204,11 +217,7 @@ Task 6: Use the galaxy roles
 ```
 Create ansible/role.yml to perform 
 following:
-- Use balancer galaxy role to configured   
-  balancer host group to balance 
-  www traffic between webservers's 
-  nodes
-  
+- Use balancer galaxy role to configured balancer host group to balance www traffic between webservers's nodes
   So that when first curl http://node5  
   
   Welcome to node3.example.com
@@ -218,15 +227,12 @@ following:
   Welcome to node4.example.com
 
 - Create ansible/phpinfo.yml to perform following:
-  Use phpinfo galaxy role to configure webservers 
-  with php runtime
+  Use phpinfo galaxy role to configure webservers with php runtime
   
-  So that when first curl http://node3/phpinfo it will 
-  yields following result
+  So that when first curl http://node3/phpinfo it will yields following result
   Hello PHPinfo from node3.example.com
 
-  So that when first curl http://node4/phpinfo it will 
-  yields following result
+  So that when first curl http://node4/phpinfo it will yields following result
   Hello PHPinfo from node4.example.com
 ```
 
@@ -252,8 +258,10 @@ vi /home/greg/ansible/phpinfo.yml
   tasks:
   - include_role:
     name: phpinfo
-...	
-or if tasks ask to use both roles in single playbook
+...
+```
+- or if tasks ask to use both roles in single playbook
+```
 vi /home/greg/ansible/role.yml
 ---
 - name: Use roles
@@ -269,7 +277,9 @@ vi /home/greg/ansible/role.yml
     name: phpinfo
     when: inventory_hostname in groups['webservers']
 ...
-or if tasks ask to use both roles in single playbook
+```
+- or if tasks ask to use both roles in single playbook
+```
 vi /home/greg/ansible/role.yml
 ---
 - name: Use roles
@@ -308,8 +318,7 @@ Create /home/greg/ansible/roles/apache role
 Create /home/greg/ansible/newrole.yml to perform following:
 - Use the apache role to 
   - install httpd package into webservers nodes
-  - enable firewall service with rules to allow httpd 
-    traffic into the webservers nodes
+  - enable firewall service with rules to allow httpd traffic into the webservers nodes
   - Configure index.j2 to populate with following content
     into webservers nodes:
 	
@@ -340,10 +349,9 @@ vi /home/greg/ansible/roles/apache/tasks/main.yml
     dest: /var/www/html/index.html
 ...
 vi /home/greg/ansible/roles/apache/templates/index.j2
-Welcome to {{ ansible_facts.hostname }} with 
-{{ ansible_facts.default_ipv4.address }}	
+Welcome to {{ ansible_facts.hostname }} with {{ ansible_facts.default_ipv4.address }}	
 	
-vi 	/home/greg/ansible/newrole.yml
+vi /home/greg/ansible/newrole.yml
 ---
 - name: Use custom role
   hosts: webservers
@@ -367,7 +375,7 @@ Create ansible/packages.yml playbook to
 
 Answer:
 ```
-vi 	ansible/packages.yml
+vi ansible/packages.yml
 ---
 - name: Install packages on dev,test,prod
   become: true
