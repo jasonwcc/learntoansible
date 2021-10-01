@@ -92,7 +92,7 @@ Task 1: Configure inventory with following grouping
 
 Answer:
 ```
-
+```
 Task 2: Install ansible
 
 Answer:
@@ -201,6 +201,7 @@ Verify:
 ```
   
 Task 6: Use the galaxy roles
+```
 Create ansible/role.yml to perform 
 following:
 - Use balancer galaxy role to configured   
@@ -227,8 +228,10 @@ following:
   So that when first curl http://node4/phpinfo it will 
   yields following result
   Hello PHPinfo from node4.example.com
+```
 
 Answer:
+```
 vi /home/greg/ansible/role.yml
 ---
 - name: Use balancer role 
@@ -285,8 +288,10 @@ vi /home/greg/ansible/role.yml
   - include_role:
     name: phpinfo
 ...
+```
 
 Verify:
+```
 ansible-playbook role.yml
 curl http://node5
 node3.example.com
@@ -309,8 +314,10 @@ Create /home/greg/ansible/newrole.yml to perform following:
     into webservers nodes:
 	
 	    Welcome to HOSTNAME with IP_ADDRESS
+```
 
 Answer:
+```
 cd /home/greg/ansible/roles
 ansible-galaxy role init apache 
 
@@ -345,17 +352,21 @@ vi 	/home/greg/ansible/newrole.yml
   roles:
   - apache
 ...
+```
 
 Verify
 
 
 Task 8: Install packages based on hosts
+```
 Create ansible/packages.yml playbook to
 - install mariadb and php packages into dev,test,prod host groups
 - install RPM Development Tools group of packages into dev host group
 - Update all packages in dev host group to latest version
-	
+```
+
 Answer:
+```
 vi 	ansible/packages.yml
 ---
 - name: Install packages on dev,test,prod
@@ -380,11 +391,15 @@ vi 	ansible/packages.yml
       name: "*"
 	  state: latest
 ...
+```
 
 Verify
-  ansible-playbook /home/greg/ansible/packages.yml
+```
+ansible-playbook /home/greg/ansible/packages.yml
+```
 
 Task 9: Secret Vault
+```
 Create locker.yml with following content
 ---
 dev: imadev
@@ -393,16 +408,20 @@ test: imatest
 
 Encrypt locker.yml with password "ILoveRedHat" and store
 the password in secret.txt
+```
 
 Answer:
+```
 cd /home/greg/ansible
 echo "ILoveRedHat" > secret.txt
 
 ansible-vault create \
 --vault-password-file=secret.txt \
 locker.yml
+```
 
 Task 10: Create users and groups
+```
 Download https://rhgls.realm13.example.com/user_list.txt 
 into /home/greg/ansible/ directory
 Create /home/greg/ansible/users.yml playbook to run in webservers
@@ -415,8 +434,10 @@ Set user's password based on locker.yml
 - make sure to use sha512 algorithm
 - User with developer description will use dev variable as the password
 - User with manager description will use test variable as the password
-	
+```
+
 Answer:
+```
 cd /home/greg/ansible
 wget https://rhgls.realm13.example.com/user_list.txt 
 cat user_list.txt
@@ -456,11 +477,15 @@ vi /home/greg/ansible/users.yml
     when: item.description == "manager"
 ...
 ansible-playbook --vault-password-file=secret.txt users.yml
- 
+```
+
 Verify
-  ssh ali@172.25.250.11
- 
+```
+ssh ali@172.25.250.11
+```
+
 Task 11: Collect Data
+```
 Download from https://rhgls.realm13.example.com/hwrequire.empty
 into /root/hwrequire.txt in each managed nodes
 
@@ -476,8 +501,10 @@ NOTE: if node doesnt have the hw, display NONE
 
 Create ansible/hwrequire.yml
 - collect hw information and store in /root/hwrequire.txt  
-		
+```
+
 Answer:
+```
 cd /home/greg/ansible/
 wget https://rhgls.realm13.example.com/hwrequire.empty 
 cat hwrequire.empty
@@ -503,8 +530,10 @@ Total CPU = {{ ansible_process_cores }}
 sda_disk_space= {{ ansible_devices.sda.size | default("NONE") }}
 sdb_disk_space= {{ ansible_devices.sdb.size | default("NONE") }}
 hda_disk_space= {{ ansible_devices.hda.size | default("NONE") }}
+```
 
 Task 12: file module - symbolic link
+```
 Create webcontent.yml playbook to run in balancer group to perform
 following tasks:
 
@@ -517,7 +546,9 @@ following tasks:
      Development
 - When curl http://node5/webdev/index.html yields 
      Development
-	 
+```
+Answer
+```
 vi ansible/webcontent.yml
 ---
 - name: Webcontent
@@ -543,8 +574,10 @@ vi ansible/webcontent.yml
 	  content: "Development"
 	  dest: /var/www/html/webdev/index.html
 ...
+```
 
 Task 13: Rekey vault password
+```
 Download and extract 
 from https://rhgls.realm13.example.com/vaulted.tar into
 greg/ansible directory
@@ -555,8 +588,10 @@ You are required to create new-secret.txt in vaulted/ containing
 new password "secure"
 
 Change the vaulted/secret.yml with the new password
+```
 
 Answer:
+```
 cd greg/ansible
 wget  https://rhgls.realm13.example.com/vaulted.tar 
 tar -xvf vaulted.tar
@@ -571,19 +606,25 @@ secure
 ansible-vault rekey --vault-password-file=secret.txt \
 --new-vault-password-file=new-secret.txt \
 secret.yml
+```
 
 Verify
+```
 ansible-vault view secret.yml
 < enter secure >
+```
 
 Task 14: Archiving files
+```
 Create ansible/backup.yml playbook to 
 - archive all files in /home/ali, /home/peter into
 /tmp/home.tar.bz2 
 Run this playbook on database servers only with following 
 conditions:
 - /tmp/home.tar.bz2 must be owned by root and with 0644 mode
-
+```
+Answer
+```
 vi ansible/backup.yml
 ---
 - name: Archiving files
@@ -601,10 +642,12 @@ vi ansible/backup.yml
 	    - /home/ali
 	    - /home/peter
 ...
+```
 
 Verify
-
+```
   ansible-playbook backup.yml
   ssh <ip to the db server>
   ls /tmp/home*
   tar -j -tvf /tmp/home.tar.bz2
+```
