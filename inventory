@@ -1,0 +1,16 @@
+node1 ansible_host=servera
+node2 ansible_host=serverb
+node3 ansible_host=serverc
+node4 ansible_host=serverd
+
+
+[webservers]
+node2
+node3
+
+[dbservers]
+node4
+
+[proxy]
+node1
+node2
