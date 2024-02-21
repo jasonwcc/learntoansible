@@ -1,0 +1,15 @@
+---
+- name: Use Union filter
+  hosts: localhost
+  gather_facts: no
+  vars:
+    list1: ["durian", "orange", "apple"]
+    list2: ["watermelon", "apple", "pear"]
+    list3: ["jackfruit", "apple", "passionfruit", "orange"]
+
+  tasks:
+  - name: Combine elements from both list and at same time use unique filter
+    debug:
+      msg: "{{ list1 | union(list2) | union(list3) }}"
+
+

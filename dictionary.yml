@@ -1,0 +1,23 @@
+---
+- name: Work with Dictionaries
+  hosts: localhost
+  gather_facts: no
+  vars_files: dictionary.txt
+
+  tasks:
+  - name: E01 - showing users
+    debug:
+      msg: "{{ users }}"
+
+  - name: E02 - find the data type
+    debug:
+      msg: "Above data is {{ users | type_debug }} data type"
+
+  - name: E03 - show users.jaco
+    debug:
+      msg: "{{ users.jaco }}"
+
+  - name: E04 - show users.jaco.favorites
+    debug:
+      msg: "{{ users.jaco.favorites }}"
+

@@ -1,0 +1,15 @@
+---
+- name: Using quote filter
+  hosts: localhost
+  gather_facts: no
+  vars:
+    my_string: "Quick brown fox"
+
+  tasks:
+  - name: Without using quote filter
+    debug:
+      msg: "{{ my_string }}"
+
+  - name: use quote filter
+    debug:
+      msg: "{{ my_string | quote }}"

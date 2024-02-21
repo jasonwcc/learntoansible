@@ -1,0 +1,21 @@
+---
+- name: Extracting list elements filters
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Show the first item
+    debug:
+        msg: "{{ ['jason', 'peter', 'mike'] | first  }} "
+
+  - name: Show the last item
+    debug:
+       msg: '{{ ["jason", "peter", "mike"] | last  }} '
+
+  - name: Returns a random item from list
+    debug:
+       msg: '{{ ["jason", "peter", "mike"] | random }}'
+
+  - name: Calculate length in the sentence
+    assert:
+       that: '{{ "Water melon" | length }} is eq( 11 )'
+

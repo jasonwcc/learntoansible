@@ -1,0 +1,24 @@
+---
+- name: converting between dictionaries and lists
+  hosts: localhost
+  gather_facts: no
+
+
+  tasks:
+  - name: use hash filter
+    debug:
+      msg: "{{ 'Password' | hash('sha1') }}"
+
+
+  - name: use b64encode filter
+    debug:
+      msg: "{{ 'Password' | b64encode }}"
+
+  - name: use b64decode filter
+    debug:
+      msg: "{{ 'UGFzc3dvcmQ=' | b64decode }}"
+
+  - name: use password_hash filter
+    debug:
+      msg: "{{ 'Password' | password_hash('sha512') }}"
+

@@ -1,0 +1,16 @@
+---
+- name: Capitalize, upper and lower filter
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Capitalize first letter in names
+    debug:
+      msg: '{{ "jason" | capitalize }}'
+
+  - name: Use upper filter
+    debug:
+      msg: '{{ "jaSoN" | upper }}'
+
+  - name: Use lower filter
+    debug:
+      msg: '{{ "jaSoN" | lower }}'

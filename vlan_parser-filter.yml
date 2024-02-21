@@ -1,0 +1,10 @@
+---
+- name: Use of vlan_parser filter
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  #You must install ansible.netcommon collection
+  #ansible-galaxy collection install ansible.netcommon -p ./collections
+  - name: Sort a VLAN list
+    debug:
+        msg: "{{ [3003, 3004, 3005, 100, 1688, 3002, 3999, 1999] | ansible.netcommon.vlan_parser }}"

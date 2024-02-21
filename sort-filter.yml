@@ -1,0 +1,24 @@
+---
+- name: Use sort and reverse filter
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Sort string data list in ascending order
+    debug:
+        msg: "{{ ['jason', 'peter', 'mike'] | sort  }} "
+
+  - name: Sort string data list in descending order
+    debug:
+       msg: '{{ ["jason", "peter", "mike"] | reverse  }} '
+
+  - name: Sort numerical data in ascending order
+    debug:
+        msg: "{{ [ 101, 2, 50, 77, 12 ] | sort  }} "
+
+  - name: Sort numerical data in descending order - not working
+    debug:
+        msg: "{{ [ 101, 2, 50, 77, 12 ] | reverse  }} "
+
+  - name: Sort numerical data in descending order 
+    debug:
+        msg: "{{ [ 101, 2, 50, 77, 12 ] |  sort(reverse=true)  }} "

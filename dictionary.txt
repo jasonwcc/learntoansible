@@ -1,0 +1,25 @@
+users:
+   jaco:
+      fname: Jammy Collins
+      age: 44
+      dept: Sales
+      favorites:
+            Sports
+            Cars
+   pepa:
+      fname: Peter Pan
+      age: 16
+      dept: Operation
+      favorites: Musics
+   kekl:
+       fname:  Kelvin Kline
+       age: 20
+       dept: Sales
+       favorites:
+             Musics
+             Movies
+   maan:
+        fname: Mary Anne
+        age: 35
+        dept: Finance
+

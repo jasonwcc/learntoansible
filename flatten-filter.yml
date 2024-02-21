@@ -1,0 +1,28 @@
+---
+- name: Use flatten filter
+  hosts: localhost
+  gather_facts: no
+  vars_files: dictionary.txt
+
+  tasks:
+  - name: Showing data from dictionary
+    debug:
+      msg: "{{ users  }}"
+
+  - name: Show only top-level from list
+    debug:
+      msg: "{{ users | flatten  }}"
+
+  - name: Example of multi-level list
+    debug:
+      msg: '{{ ["Bldg1", ["Floor1", ["Operation", "Sales"]], "Bldg2", ["Floor5", ["Meeting", "Pantry"]] ] }}'
+      #msg: '{{ ["a", [4, [11, 22]], "b" ] }}'
+
+  - name: Flattening multi-level list
+    debug:
+      msg: '{{ ["Bldg1", ["Floor1", ["Operation", "Sales"]], "Bldg2", ["Floor5", ["Meeting", "Pantry"]] ] | flatten }}'
+
+  - name: Flattening multi-level list with levels option
+    debug:
+      msg: '{{ ["Bldg1", ["Floor1", ["Operation", "Sales"]], "Bldg2", ["Floor5", ["Meeting", "Pantry"]] ] | flatten(levels=1) }}'
+

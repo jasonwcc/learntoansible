@@ -1,0 +1,6 @@
+colors:
+    - Red
+    - Blue
+    - Yellow
+    - Light Grey
+cars: ['Toyota', 'Honda', 'Land Cruiser', Proton']

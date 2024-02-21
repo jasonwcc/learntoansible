@@ -1,0 +1,9 @@
+---
+- name: Split filter
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Calculate total/sum
+    debug:
+        msg: '{{ "jason wong" | split | capitalize }}'
+

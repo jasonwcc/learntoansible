@@ -1,0 +1,16 @@
+---
+- name: Use combine filter to join 2 dictionaries
+  hosts: localhost
+  gather_facts: no
+  vars:
+    branch: 
+      price1: 100
+      price2: 250
+    hq:
+      price2: 200
+      price3: 120
+      
+  tasks:
+  - debug:
+      msg: "{{ branch | combine(hq) }}"
+        #- "{{ {'A':1,'B':2} | combine({'B':4,'C':5}) }} "

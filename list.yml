@@ -1,0 +1,26 @@
+---
+- name: Work with Lists
+  hosts: localhost
+  gather_facts: no
+  vars_files: list.txt
+
+  tasks:
+  - name: E01 - showing data from colors
+    debug:
+      msg: "{{ colors  }}"
+
+  - name: E02 - showing data from cars
+    debug:
+      msg: "{{ cars  }}"
+
+  - name: E03 - find the data type
+    debug:
+      msg: "Above data is {{ colors  | type_debug }} data type"
+
+  - name: E04 - point to first entry in colors
+    debug:
+      msg: "{{ colors[0] }}"
+
+  - name: E05 - point to third entry in cars
+    debug:
+      msg: "{{ cars[2]  }}"
