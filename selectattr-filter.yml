@@ -1,0 +1,19 @@
+---
+- name: Query automation controller execution environments
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Query EEs
+    vars:
+      username_password: "admin:redhat"
+    ansible.builtin.uri:
+      url: https://controller.lab.example.com/api/v2/execution_environments/
+      method: GET
+      headers:
+        Authorization: Basic {{ username_password | string | b64encode }}
+      validate_certs: false
+    register: query_results
+
+  - name: Show execution environment ID
+    ansible.builtin.debug:
+      msg: "{{ query_results['json']['results'] | selectattr('name', '==', 'Control Plane Execution Environment') | map(attribute='id') | first }}"

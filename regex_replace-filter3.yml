@@ -1,0 +1,20 @@
+---
+- name: Use regex_replace
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+  - debug:
+      msg:
+        #- '{{ item | regex_search("is(\S*).") }}'
+        - '{{ item | regex_replace("is (\S*).","- $0") }}'
+    loop:
+      - "Hot Dog - $10"
+      - "Burger - $15"
+      - "Tomato is FOC."
+      - "Water is non-chargeable."
+
+  - debug:
+      msg:
+        - '{{ "marvin, arthur" | regex_search("ar(\S*)r") }}'
+        - '{{ "arthur up" | regex_replace("ar(\S*)r","\1mb") }}'
