@@ -1,6 +1,6 @@
 ---
 - name: Loop with subelements filter
-  hosts: node1
+  hosts: localhost
   vars_files: iterating_over_nested_lists.txt
 
   tasks:
@@ -16,3 +16,8 @@
       user: "{{ item[0]['name'] }}"
       key: "{{ lookup('ansible.builtin.file', item[1]) }}"
     loop: "{{ users | subelements('authorized') }}"
+
+  - name: View authorized_keys
+    ansible.builtin.debug:
+      msg: '{{ query("lines", "cat /home/" + item.name + "/.ssh/authorized_keys") }}'
+    loop: "{{ users }}"
