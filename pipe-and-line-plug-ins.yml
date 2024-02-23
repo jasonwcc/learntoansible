@@ -1,0 +1,19 @@
+- name: USe lines and pipe jinja2 plug-ins
+  hosts: localhost
+
+  tasks:
+  - debug:
+      msg: "{{ query('ansible.builtin.pipe', 'ls files') }}"
+
+  - debug:
+      msg: "{{ query('ansible.builtin.lines', 'ls files') }}"
+
+  - name: Prints lines of some files
+    ansible.builtin.debug:
+      msg: "{{ item }}"
+    loop: "{{ query('ansible.builtin.lines', 'cat files/sample.txt') }}"
+
+  - name: More complex requirements
+    ansible.builtin.debug:
+      msg: "The sentence - '{{ item }}' has {{ item | length }} characters"
+    loop: "{{ query('ansible.builtin.lines', 'grep dog files/sample.txt')  }}"

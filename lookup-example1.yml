@@ -1,0 +1,18 @@
+---
+- name: Use lookup plug-ins
+  hosts: localhost
+  gather_facts: no
+  vars:
+    hosts: "{{ lookup('ansible.builtin.file', '/etc/hosts') }}"
+    readme: "{{ lookup('ansible.builtin.file', '/etc/hosts', '/etc/resolv.conf') }}"
+
+  tasks:
+  - name: Show content of hosts variable
+    copy:
+      content: "{{ hosts }}"
+      dest: hosts-by-lookup
+
+  - name: Show content of readme variable
+    copy:
+      content: "{{ readme }}"
+      dest: readme-by-lookup

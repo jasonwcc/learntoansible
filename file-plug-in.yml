@@ -1,0 +1,13 @@
+- name: Add authorized keys
+  hosts: localhost
+  vars:
+    users:
+      - fred
+      - naoko
+
+  tasks:
+    - name: Add authorized keys
+      ansible.posix.authorized_key:
+        user: "{{ item }}"
+        key: "{{ lookup('ansible.builtin.file', 'files/keys/' + item + '.key.pub') }}"
+      loop: "{{ users }}"
