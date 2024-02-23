@@ -15,13 +15,17 @@
         value: Robot
       - key: Arthur
         value: Human
+    list2: ['Toyota' ,['Vios','Altis'], 'Honda', ['Stream', 'City']]
 
   tasks:
   - name: Convert from dictionary to list
     debug:
-      msg: "{{ list | dict2items }}"
+      msg: "{{ dictionary | dict2items }}"
 
   - name: Convert from list to dictionary
     debug:
       msg: "{{ list | items2dict }}"
 
+  - name: Convert from list2 to dict
+    debug:
+      msg: "{{ list2 | items2dict }}"

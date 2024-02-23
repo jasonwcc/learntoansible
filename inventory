@@ -1,4 +1,4 @@
-node1 ansible_host=servera
+node1 ansible_host=172.16.200.29
 #node2 ansible_host=serverb
 #node3 ansible_host=serverc
 #node4 ansible_host=serverd

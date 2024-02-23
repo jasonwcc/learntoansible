@@ -1,0 +1,27 @@
+---
+- name: converting between dictionaries and lists
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    dictionary:
+      Douglas: Human
+      Marvin: Robot
+      Arthur: Human
+    list:
+      - key: Douglas
+        value: Human
+      - key: Marvin
+        value: Robot
+      - key: Arthur
+        value: Human
+
+  tasks:
+  - name: Convert from dictionary to list
+    debug:
+      msg: "{{ dictionary | dict2items }}"
+
+  - name: Convert from list to dictionary
+    debug:
+      msg: "{{ list | items2dict }}"
+
