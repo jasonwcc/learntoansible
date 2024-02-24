@@ -4,6 +4,9 @@ node1 ansible_host=172.16.200.29
 #node4 ansible_host=serverd
 
 
+[web_servers]
+node1
+
 [webservers]
 node2
 node3

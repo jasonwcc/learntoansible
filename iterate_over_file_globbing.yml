@@ -1,0 +1,25 @@
+---
+- name: Test fileglob with lookup and query lugin
+  hosts: localhost
+  gather_facts: no
+
+  # Purpose of play: List all files that starts with .bash in current user home dir
+  # but we going to do it using different approach
+  tasks:
+  - name: fileglob module with lookup plugin
+    ansible.builtin.debug:
+       msg: "{{ lookup('ansible.builtin.fileglob', '~/.bash*') }}"
+
+  - name: fileglob module with query plugin
+    ansible.builtin.debug:
+       msg: "{{ query('ansible.builtin.fileglob', '~/.bash*') }}"
+
+  - name: fileglob module with loop and query plugin      
+    ansible.builtin.debug:
+       msg: "{{ item }}"
+    loop: "{{ query('fileglob', '~/.bash*') }}" 
+
+  - name: Just with_fileglob keyword
+    ansible.builtin.debug:
+       msg: "{{ item }}"
+    with_fileglob: "~/.bash*"

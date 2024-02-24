@@ -1,0 +1,35 @@
+- name: Set up web servers
+  hosts: node1
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Ensure httpd is installed
+      ansible.builtin.yum:
+        name: httpd
+        state: installed
+
+    - name: Configure web server status page
+      ansible.builtin.copy:
+        #content: "Server: {{ ansible_fqdn ] }} at {{ ansible_default_ipv4['address'] }}"
+        content: 
+             "Server: {{ ansible_facts['fqdn'] }} 
+             at {{ ansible_facts['default_ipv4']['address'] }}"
+        dest: /var/www/html/status.html
+        owner: apache
+        group: apache
+        mode: '0444'
+
+
+    - name: Start and enable webserver
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true
+
+    #- name: Notify root of server provisioning
+      #community.general.mail:
+        #subject: >
+          #System {{ ansible_facts['hostname'] }} has
+          #been successfully provisioned.
+...
