@@ -19,8 +19,8 @@
         msg: "{{ item['value']['fname'] }}"
     when: item.key == "pepa"
     with_dict: "{{ users }}"
-    #result still showing skipping tasks, to hide that - vi ansible.cfg and add 
-    #display_skipped_hosts = false under [defaults] section
+    # Result still showing skipping tasks, to hide that Add following parameter
+    # display_skipped_hosts = false under [defaults] section in ansible.cfg file
 
   - name: Show rows from Sales dept
     debug:
