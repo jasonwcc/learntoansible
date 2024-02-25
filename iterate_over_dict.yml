@@ -1,0 +1,21 @@
+---
+- name: Iterate over Dictionary
+  hosts: node1
+  gather_facts: no
+  vars_files: dictionary.txt
+
+  tasks:
+  - name: Using with_dict
+    ansible.builtin.user:
+      name: "{{ item['key'] }}"
+      comment: "{{ item['value']['fname'] }}"
+      state: present
+    with_dict: "{{ users }}"
+
+  #- name: Using loop and dict2items
+    #ansible.builtin.user:
+      #name: "{{ item['key'] }}"
+      #comment: "{{ item['value']['fname'] }}"
+      #state: present
+    ##loop: "{{ users |dict2items }}"
+    #

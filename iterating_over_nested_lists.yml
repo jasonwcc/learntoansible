@@ -1,0 +1,18 @@
+---
+- name: Loop with subelements filter
+  hosts: node1
+  vars_files: iterating_over_nested_lists.txt
+
+  tasks:
+  - name: First lets create those users
+    ansible.builtin.user:
+      name: "{{ item.name }}"
+      password: "{{ item.password | password_hash('sha512')  }}"
+      groups: "{{ item.groups }}"
+    loop: "{{ users }}"
+
+  - name: Set authorized ssh key
+    ansible.posix.authorized_key:
+      user: "{{ item[0]['name'] }}"
+      key: "{{ lookup('ansible.builtin.file', item[1]) }}"
+    loop: "{{ users | subelements('authorized') }}"

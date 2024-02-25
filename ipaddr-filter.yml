@@ -1,0 +1,60 @@
+# Install the python netaddr package
+# subscription-manager repos --enable "ansible-automation-platform-2.4-for-rhel-9-x86_64-rpms"
+# dnf -y install ansible-core ansible-navigator
+# And download the ee-supported-rhel8:latest image
+---
+- name: Use of ansible.utils.ipaddr filter
+  hosts: localhost
+  gather_facts: no
+  vars_files: network_datas.txt
+
+  tasks:
+  - name: Valid IPs
+    debug:
+      msg: '{{ listofips | ansible.utils.ipaddr }}'
+
+  - name: Find usable host IPs
+    debug:
+      msg: '{{ listofips | ansible.utils.ipaddr("host") }}'
+
+  - name: Find network IDs only
+    debug:
+      msg: "{{ listofips | ansible.utils.ipaddr('net') }}"
+
+  - name: Calculate broadcast IP
+    debug:
+      msg: "{{ listofips | ansible.utils.ipaddr('broadcast') }}"
+
+  - name: Show Network ID with CIDR prefix
+    debug:
+      msg: "{{ listofips | ansible.utils.ipaddr('network/prefix') }}"
+
+  - name: Show Network ID with CIDR prefix
+    debug:
+      msg: "{{ listofips | ansible.utils.ipaddr('cidr') }}"
+
+  - name: Find Private IP addresses only
+    debug:
+      msg: "{{ listofips | ansible.utils.ipaddr('private') }}"    
+
+  - name: Find Public IP addresses only
+    debug:
+      msg: "{{ listofips | ansible.utils.ipaddr('public') }}"
+
+  - name: Wrap all datas with quotes
+    debug:
+      msg: "{{ listofips | ansible.utils.ipwrap }}"
+
+  - name: Wrap only valid IP addresses with quotes
+    debug:
+      msg: "{{ listofips | ansible.utils.ipaddr | ansible.utils.ipwrap }}"
+
+  - name: Find usable host IPs
+    debug:
+      msg: '{{ listofips | ansible.utils.ipaddr("host") | ansible.utils.ipaddr("revdns")}}'
+
+  - name: cidr
+    debug:
+      msg: "{{ item | ansible.utils.ipaddr('cidr') }}"
+    loop: "{{ listofips }}"
+

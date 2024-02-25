@@ -1,0 +1,29 @@
+---
+- name: new task
+  hosts: localhost
+  gather_facts: no
+  vars:
+    mylist: 
+      - /etc/file1
+      - /usr/bin/file2
+      - /var/file3
+
+
+  tasks:
+  - debug:
+      var: mylist 
+
+  - ansible.builtin.debug:
+     msg: "{{ item }}"
+    loop: "{{ mylist }}"
+
+  - name: using with_list
+    ansible.builtin.debug:
+      msg: "{{ item }}"
+    with_list: "{{ mylist }}"
+
+  - name: using lookup plugin
+    ansible.builtin.debug:
+      msg: "{{ item }}"
+    loop: "{{ lookup('ansible.builtin.list', mylist) }}" 
+

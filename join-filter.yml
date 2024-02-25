@@ -1,0 +1,18 @@
+---
+- name: Use join filter
+  hosts: webservers
+  gather_facts: no
+  tasks:
+  - name: Show ansible_play_batch content
+    debug:
+        msg: "{{ ansible_play_batch }}"
+
+  - name: Perform join on the ansible_play_batch list
+    debug:
+        msg: "{{ ansible_play_batch | join(' ') }}"
+
+  - name: Perform join on the ansible_play_batch list only once
+    debug:
+        msg: "{{ ansible_play_batch | join(' ') }}"
+    when: inventory_hostname == ansible_play_hosts[1]
+

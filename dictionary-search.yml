@@ -1,0 +1,37 @@
+---
+- name: Look for data in dictionary.txt
+  hosts: localhost
+  gather_facts: no
+  vars_files: dictionary.txt
+
+  tasks:
+  - name: E0 - Show all data 
+    debug:
+        msg: "{{ users }}"
+
+  - name:  Show row's key
+    debug:
+        msg: "{{ item['key'] }}"
+    loop: "{{ users | dict2items }}"
+
+  - name: Show fullname for pepa only
+    debug:
+        msg: "{{ item['value']['fname'] }}"
+    when: item.key == "pepa"
+    with_dict: "{{ users }}"
+    # Result still showing skipping tasks, to hide that Add following parameter
+    # display_skipped_hosts = false under [defaults] section in ansible.cfg file
+
+  - name: Show rows from Sales dept
+    debug:
+        msg: "{{ item }}"
+    when:  item.value.dept == "Sales"
+    #when:  item.value.dept | lower   == "sales"
+    with_dict: "{{ users }}"
+
+  - name: Show person younger than 25 yrs old and also from the Sales dept
+    debug:
+        msg: "{{ item }}"
+    when: item.value.age <= 25 and item.value.dept == "Sales"
+    with_dict: "{{ users }}"
+

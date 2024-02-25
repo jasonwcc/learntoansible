@@ -1,0 +1,32 @@
+---
+- name: Manipulating JSON and YAML data structures
+  hosts: localhost
+  gather_facts: no
+  vars:
+    data_in_yaml:
+      - name: bastion
+        ip:
+          - 172.25.250.254
+          - 172.25.252.1
+    data_in_json: '[{"name": "Jason", "favorites": ["musics", "games"]}]'
+
+  tasks:
+  - name: Using to_json
+    copy:
+      dest: output.json
+      content: "{{ data_in_yaml | to_json }}"
+
+  - name: Using to_nice_json
+    copy:
+      dest: output-nice.json
+      content: "{{ data_in_yaml | to_nice_json }}"
+
+  - name: Using to_yaml
+    copy:
+      dest: output.yaml
+      content: "{{ data_in_json | to_yaml }}"
+
+  - name: Using to_nice_yaml
+    copy:
+      dest: output-nice.yaml
+      content: "{{ data_in_json | to_nice_yaml }}"

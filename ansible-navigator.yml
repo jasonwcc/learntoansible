@@ -1,4 +1,10 @@
 ---
 ansible-navigator:
+  ansible:
+    cmdline: "--forks 15"
   playbook-artifact:
     enable: false
+  execution-environment:
+    image: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest
+    pull:
+     policy: missing

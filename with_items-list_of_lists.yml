@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    app_a_tmp_files:
+      - /tmp/file_a1
+      - /tmp/file_a2
+    app_b_tmp_files:
+      - /tmp/file_b1
+      - /tmp/file_b2
+    app_c_tmp_files:
+      - /tmp/file_c1
+      - /tmp/file_c2
+
+  tasks:
+  - name: Remove build files
+    ansible.builtin.file:
+      path: "{{ item }}"
+      state: touch
+      mode: "0755"
+    with_items:
+      - "{{ app_a_tmp_files }}"
+      - "{{ app_b_tmp_files }}"
+      - "{{ app_c_tmp_files }}"
+

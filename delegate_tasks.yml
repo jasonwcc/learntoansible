@@ -1,0 +1,23 @@
+---
+- name: Delegation Example
+  hosts: managed.lab.example.com
+  become: false
+
+  tasks:
+    - name: E01 - Get system information
+      ansible.builtin.command: uname -a
+      register: managed_host
+
+    - name: E02 - Display {{ inventory_hostname }} system information
+      ansible.builtin.debug:
+        var: managed_host
+
+    - name: E03 - Get system information
+      ansible.builtin.command: uname -a
+      delegate_to: control.lab.example.com
+      register: delegated
+
+    - name: E04 - Display {{ inventory_hostname }} system information
+      ansible.builtin.debug:
+        var: delegated
+...
