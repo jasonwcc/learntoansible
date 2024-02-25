@@ -2,6 +2,7 @@ node1 ansible_host=r9s2.example.com
 node2 ansible_host=r9s3.example.com
 node3 ansible_host=r9s1.example.com
 #node4 ansible_host=r9s4.example.com
+#node5 ansible_host=r9s4.example.com
 control.lab.example.com ansible_host=r9s1.example.com
 managed.lab.example.com ansible_host=r9s2.example.com
 #node2 ansible_host=serverb
