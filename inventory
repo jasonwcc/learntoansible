@@ -1,7 +1,7 @@
-node1 ansible_host=servera
-node2 ansible_host=serverb
-node3 ansible_host=serverc
-node4 ansible_host=serverd
+node1 ansible_host=r9s2.example.com
+node2 ansible_host=r9s3.example.com
+node3 ansible_host=r9s1.example.com
+#node4 ansible_host=r9s4.example.com
 
 
 [webservers]

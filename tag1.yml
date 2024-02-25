@@ -1,0 +1,28 @@
+---
+- name: Tag1 - test always and never
+  hosts: localhost
+  tasks:
+  - name: Task1
+    debug:
+      msg: "This is task1 with always tag"
+  
+  - name: Task2
+    debug:
+      msg: "This is task2 without any tag"
+
+  - name: Task3
+    debug:
+      msg: "This is task3 with tag1 tag"
+    #tags:
+    #- tag2
+
+  - name: Task4
+    debug:
+      msg: "This is task4 with never tag"
+    #tags:
+    #- never
+
+  - name: run tasks from sub_tasks_file.yml
+    include_tasks: sub_tasks_file.yml
+    tags: mytag
+    

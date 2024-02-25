@@ -1,0 +1,10 @@
+- name:
+  hosts: localhost
+  tasks:
+  - name: Change case of characters
+    debug:
+      msg:
+        - '{{ "Marvin" | lower }}'
+        - '{{ "Marvin" | upper }}'
+        - '{{ "marvin" | capitalize }}'
+

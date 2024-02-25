@@ -1,0 +1,11 @@
+- name:
+  hosts: localhost
+  gather_facts: no
+  vars:
+    my_string: 'Quick brown fox jumped over brown lazy dog' 
+  tasks:
+  - name: Replace 'ar' with asterisks
+    debug: 
+      msg:
+      - "Old     : {{ my_string }}"
+      - "Replaced: {{ my_string | replace('brown','yellow') }}'"

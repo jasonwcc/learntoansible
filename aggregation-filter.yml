@@ -2,17 +2,20 @@
 - name: Capitalize, upper and lower filter
   hosts: localhost
   gather_facts: no
+  vars:
+    data: [20, 34, 16, 80, 100, 12]
+
   tasks:
   - name: Calculate total/sum
     debug:
-        msg: "{{ [20, 34, 16, 80, 100, 12] | sum }}"
+        msg: "{{ data | sum }}"
 
   - name: Find the largest value
     debug:
-        msg: "{{ [20, 34, 16, 80, 100, 12] | max }}"
+        msg: "{{ data | max }}"
 
   - name: Find the largest value
     debug:
-        msg: "{{ [20, 34, 16, 80, 100, 12] | min }}"
+        msg: "{{ data | min }}"
 
 

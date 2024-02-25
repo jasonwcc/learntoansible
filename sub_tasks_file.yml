@@ -1,0 +1,21 @@
+# sub_tasks_file.yml
+- name: Task1 in sub_tasks_file
+  debug:
+    msg: this task has no tags
+
+- name: Task2 in sub_tasks_file
+  debug:
+    msg: this task has mytag 
+  tags: mytag
+  
+
+- block:
+  - name: Task3 in sub_tasks_file
+    debug:
+      msg: task3 in block which has mytag
+
+  - name: Task4 in sub_tasks_file
+    debug:
+      msg: task4 in block which has mytag
+  tags: 
+  - mytag

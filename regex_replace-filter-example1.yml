@@ -1,0 +1,13 @@
+- name: Use regex_replace filter
+  hosts: localhost
+  gather_facts: no
+  vars:
+    servers: 
+      - "webserver:80"
+      - "dbserver:3306"
+      - "mailserver:110"
+
+  tasks:
+  - debug:
+      msg: "{{ item | regex_replace('^(?P<host>.+):(?P<port>\\d+)$', '\\g<host> listen to \\g<port>') }}"
+    loop: "{{ servers }}"
