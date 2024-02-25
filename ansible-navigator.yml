@@ -1,5 +1,7 @@
 ---
 ansible-navigator:
+  ansible:
+    cmdline: "--forks 15"
   playbook-artifact:
     enable: false
   execution-environment:
