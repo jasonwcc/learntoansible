@@ -4059,3 +4059,18 @@
 2024-02-25T15:05:04.700722+00:00 INFO 'ansible_navigator.main' Try again with 'run <playbook name>'
 2024-02-25T15:05:04.700776+00:00 INFO 'ansible_navigator.main' Configuration failed, using default log file location. (/root/learntoansible/ansible-navigator.log) Log level set to debug
 2024-02-25T15:05:04.700813+00:00 INFO 'ansible_navigator.main' Review the hints and log file to see what went wrong.
+2024-02-26T02:39:07.209034+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' Image inspection failed, image assumed to be corrupted or missing
+2024-02-26T02:39:07.210921+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stdout: []
+
+2024-02-26T02:39:07.210999+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stderr: Error: error inspecting object: ghcr.io/ansible/creator-ee:latest: image not known
+
+2024-02-26T02:46:00.788300+00:00 WARNING 'ansible_navigator.actions.run_replay._update_args' Configuration errors encountered, rolling back to previous configuration.
+2024-02-26T02:46:00.790966+00:00 WARNING 'ansible_navigator.actions.run_replay._update_args' Issues were found while applying the settings.
+2024-02-26T02:46:00.791094+00:00 WARNING 'ansible_navigator.actions.run_replay._update_args' An playbook artifact file is required when using the replay subcommand
+2024-02-26T02:46:07.789698+00:00 WARNING 'ansible_navigator.actions.doc._update_args' Configuration errors encountered, rolling back to previous configuration.
+2024-02-26T02:46:07.789969+00:00 WARNING 'ansible_navigator.actions.doc._update_args' Issues were found while applying the settings.
+2024-02-26T02:46:07.790039+00:00 WARNING 'ansible_navigator.actions.doc._update_args' A plugin name or other parameter is required when using the doc subcommand
+2024-02-26T02:46:55.723497+00:00 ERROR 'ansible_navigator.actions.doc._run_runner' Error occurred while fetching doc for plugin netconf: '[WARNING]: netconf was not found
+'
+2024-02-26T02:47:17.671580+00:00 ERROR 'ansible_navigator.actions.doc._run_runner' Error occurred while fetching doc for plugin netconf: '[WARNING]: netconf was not found
+'
