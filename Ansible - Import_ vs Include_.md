@@ -1,4 +1,4 @@
-```
+
 Differences
 ###import*
 - statements are pre-processed at time playbooks are parsed
@@ -19,4 +19,4 @@ Differences
 - can use ansible-playbook --list-tasks and --start-at-task
 - can use host or group inventory variables
 - cannot use "handlers"
-...
+
