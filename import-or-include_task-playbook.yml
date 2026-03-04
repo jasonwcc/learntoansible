@@ -1,0 +1,9 @@
+---
+- name: Using import_task or include_task keywords
+  hosts: localhost
+  tasks:
+  - name: Using import_task
+    import_tasks: task1.yml
+
+  - name: Using include_task
+    include_tasks: task1.yml

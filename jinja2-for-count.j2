@@ -1,0 +1,8 @@
+{% set ns = namespace(count=0) %}
+{% for myuser in users %}
+{% set ns.count = ns.count + 1 %}
+User number {{ ns.count }} - {{ myuser }}
+{% if not myuser == "root" %}
+Non-User number {{ loop.index }} - {{ myuser }}
+{% endif %}
+{% endfor %}

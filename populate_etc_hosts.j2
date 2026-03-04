@@ -1,4 +1,4 @@
-{% for host in groups['allservers'] %}
+{% for host in groups['dbservers'] %}
 
 {{ hostvars[host].ansible_facts.default_ipv4.address }}  {{ hostvars[host].ansible_facts.hostname }} {{ hostvars[host].ansible_fqdn }} {{ hostvars[host].inventory_hostname }}
 

@@ -1,0 +1,28 @@
+{% set contains = __ibm_infosvr_openigc_flows['assets'] %}
+{% set ns = namespace(seq=0, parent_id=[], parent_type=[]) %}
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<doc xmlns="http://www.ibm.com/iis/flow-doc">
+  <assets>
+{% for asset in contains recursive %}
+{% if 'id' in asset %}{% set asset_id = asset['id'] %}{% else %}{% set ns.seq = ns.seq + 1 %}{% set asset_id = 'a' ~ ns.seq %}{% endif %}
+    <asset class="{{ asset['class'] }}" repr="{{ asset['name'] }}" ID="{{ asset_id }}">
+      <attribute name="name" value="{{ asset['name'] }}"/>
+{% if (ns.parent_id|length) > 0 %}
+      <reference name="${{ ns.parent_type[-1] | regex_replace('^\$[A-Za-z0-9]*-(.*)$', '\\1') }}" assetIDs="{{ ns.parent_id[-1] }}"/>
+{% endif %}
+    </asset>
+{% if 'contains' in asset %}{% set ns.parent_id = ns.parent_id + [asset_id] %}{% set ns.parent_type = ns.parent_type + [asset['class']] %}{{ loop(asset['contains']) }}{% set ns.parent_id = ns.parent_id[:-1] %}{% set ns.parent_type = ns.parent_type[:-1] %}{% endif %}
+{% endfor %}
+  </assets>
+  <flowUnits>
+{% for flow in __ibm_infosvr_openigc_flows['flows'] %}
+    <flowUnit assetID="{{ flow['within'] }}">
+      <subFlows flowType="DESIGN" comment="{{ flow['name'] | e }}">
+{% for subflow in flow['contains'] %}
+        <flow sourceIDs="{{ subflow['from'] | join(' ') }}" targetIDs="{{ subflow['to'] | join(' ') }}" comment="{{ subflow['name'] | e }}"/>
+{% endfor %}
+      </subFlows>
+    </flowUnit>
+{% endfor %}
+  </flowUnits>
+</doc>

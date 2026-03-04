@@ -1,0 +1,12 @@
+---
+- name: Play 2
+  hosts: node2
+  gather_facts: false
+  tasks:
+    - name: Task 1 - Display a message
+      ansible.builtin.debug:
+        msg: Play 2 - Task 1
+
+    - name: Task 2 - Display a message 
+      ansible.builtin.debug:
+        msg: Play 2 - Task 2

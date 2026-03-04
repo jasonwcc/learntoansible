@@ -1,0 +1,15 @@
+- name: Example of chapter 05 using loop with condition
+  hosts: localhost
+  vars:
+    users:
+    - ali
+    - chong
+    - root
+    - murthi
+
+  tasks:
+  - name: Using template module
+    template:
+      src: ch05-using-loops-example.j2
+      dest: /tmp/ch05-using-loops-example.log
+

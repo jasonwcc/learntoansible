@@ -1,0 +1,13 @@
+---
+- name: Play 1
+  hosts: node1
+  tasks:
+    - name: Display a message
+      ansible.builtin.debug:
+        msg: Play 1
+
+- name: Import Playbook 2
+  ansible.builtin.import_playbook: play2.yml
+
+- name: Import Playbook 3
+  ansible.builtin.import_playbook: play3.yml

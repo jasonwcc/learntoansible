@@ -1,0 +1,40 @@
+{% set qualifier = __ibm_infosvr_openigc_assets['bundleId'] %}
+{% set contains = __ibm_infosvr_openigc_assets['contains'] %}
+{% set ns = namespace(seq=0, completeIDs=[], partialIDs=[], parent_id=[], parent_type=[]) %}
+<?xml version="1.0" encoding="UTF-8"?>
+<doc xmlns="http://www.ibm.com/iis/flow-doc">
+  <assets>
+{% for asset in contains recursive %}
+{% if 'name' in asset %}{% set ns.seq = ns.seq + 1 %}{% set asset_id = 'a' ~ ns.seq %}
+    <asset class="{{ qualifier }}-{{ asset['class'] }}" repr="{{ asset['name'] }}" ID="{{ asset_id }}">
+      <attribute name="name" value="{{ asset['name'] }}"/>
+{% for key in asset.keys() %}{% if key != 'contains' and key != 'class' and key != 'name' %}
+{% if asset[key] is iterable and asset[key] is not string %}
+      <attribute name="{{ key }}">
+{% for value in asset[key] %}
+        <multiValueItem>{{ value }}</multiValueItem>
+{% endfor %}
+      </attribute>
+{% else %}
+      <attribute name="{{ key }}" value="{{ asset[key] | e | replace('\n', '&#10;') }}"/>
+{% endif %}
+{% endif %}{% endfor %}
+{% if (ns.parent_id|length) > 0 %}
+      <reference name="${{ ns.parent_type[-1] }}" assetIDs="{{ ns.parent_id[-1] }}"/>
+{% else %}{% set ns.completeIDs = ns.completeIDs + [asset_id] %}{% endif %}
+    </asset>
+{% elif 'names' in asset %}
+{% for asset_name in asset['names'] %}{% set ns.seq = ns.seq + 1 %}{% set asset_id = 'a' ~ ns.seq %}
+    <asset class="{{ qualifier }}-{{ asset['class'] }}" repr="{{ asset_name }}" ID="{{ asset_id }}">
+      <attribute name="name" value="{{ asset_name }}"/>
+{% if (ns.parent_id|length) > 0 %}
+      <reference name="${{ ns.parent_type[-1] }}" assetIDs="{{ ns.parent_id[-1] }}"/>
+    </asset>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if 'contains' in asset %}{% set ns.parent_id = ns.parent_id + [asset_id] %}{% set ns.parent_type = ns.parent_type + [asset['class']] %}{{ loop(asset['contains']) }}{% set ns.parent_id = ns.parent_id[:-1] %}{% set ns.parent_type = ns.parent_type[:-1] %}{% endif %}
+{% endfor %}
+  </assets>
+  <importAction completeAssetIDs="{{ ns.completeIDs | join(' ') }}"/>
+</doc>

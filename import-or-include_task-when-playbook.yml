@@ -1,0 +1,14 @@
+---
+- name: Using import_task or include_task keywords
+  hosts: localhost
+  vars:
+    var1: "some data"
+
+  tasks:
+  - name: Using import_task
+    import_tasks: task1.yml
+    when: var1 is defined
+
+  - name: Using include_task
+    include_tasks: task1.yml
+    when: var1 is defined

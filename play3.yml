@@ -1,0 +1,20 @@
+---
+- name: Play 3a
+  hosts: node2
+  become: true
+  tasks:
+    - name: Display a message
+      ansible.builtin.debug:
+        msg: Play 3a1
+    - name: Display another message
+      ansible.builtin.debug:
+        msg: Play 3a2
+
+- name: Play 3b
+  hosts: node3
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Display a message
+      ansible.builtin.debug:
+        msg: Play 3b

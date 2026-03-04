@@ -1,6 +1,7 @@
 ---
 - name: Populate /etc/hosts using template module
-  hosts: all
+  hosts: webservers
+  become: true
   
   tasks:
   - template:

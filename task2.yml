@@ -1,0 +1,7 @@
+---
+- name: Task2.yml - Tasks to be included or imported
+  debug:
+    msg: Task2.yml - Task 1
+
+- debug: 
+    msg: Task2.yml - Task 2

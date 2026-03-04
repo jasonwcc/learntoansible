@@ -1,1 +1,4 @@
-'[{"name": "Jason", "favorites": ["musics", "games"]}]'
+ip:
+- 172.25.250.254
+- 172.25.252.1
+name: bastion

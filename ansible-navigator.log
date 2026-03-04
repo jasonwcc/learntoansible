@@ -4074,3 +4074,783 @@
 '
 2024-02-26T02:47:17.671580+00:00 ERROR 'ansible_navigator.actions.doc._run_runner' Error occurred while fetching doc for plugin netconf: '[WARNING]: netconf was not found
 '
+2026-03-02T06:12:35.739826+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' Image inspection failed, image assumed to be corrupted or missing
+2026-03-02T06:12:35.740019+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stdout: []
+
+2026-03-02T06:12:35.740051+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stderr: Error: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest: image not known
+
+2026-03-02T06:12:37.407624+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2026-03-02T06:13:18.508657+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' Image inspection failed, image assumed to be corrupted or missing
+2026-03-02T06:13:18.508937+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stdout: []
+
+2026-03-02T06:13:18.508977+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stderr: Error: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest: image not known
+
+2026-03-04T01:28:54.304262+00:00 CRITICAL 'ansible_navigator.actions.run_f030._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '67491139-4daa-4fa3-a9e5-183b10f8f2a7', 'counter': 1, 'stdout': '\x1b[0;31mERROR! the playbook: Using import_task could not be found\x1b[0m', 'start_line': 0, 'end_line': 1, 'runner_ident': 'a2081157-3f90-447d-91f7-1564295e89a9', 'created': '2026-03-04T01:28:54.303952+00:00'}
+2026-03-04T01:29:14.485674+00:00 CRITICAL 'ansible_navigator.actions.run_9e04._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b529c171-187a-46ff-bc54-09e73c5a0fba', 'counter': 1, 'stdout': '\x1b[0;31mERROR! the playbook: Using include_task could not be found\x1b[0m', 'start_line': 0, 'end_line': 1, 'runner_ident': '0bd815f0-1fa5-4f35-8b17-27c777aa3337', 'created': '2026-03-04T01:29:14.485272+00:00'}
+2026-03-04T01:31:08.070403+00:00 CRITICAL 'ansible_navigator.actions.run_a950._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '52a2b0f5-afc6-4675-9c9b-ae865b62e6ef', 'counter': 1, 'stdout': '', 'start_line': 0, 'end_line': 1, 'runner_ident': 'bcaf6fb2-cc29-4ae0-8748-8c7a61d02267', 'created': '2026-03-04T01:31:08.070103+00:00'}
+2026-03-04T01:31:08.071436+00:00 CRITICAL 'ansible_navigator.actions.run_a950._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '185271f2-1701-4a50-be62-7f8950d6c397', 'counter': 2, 'stdout': 'playbook: /root/learntoansible/import-or-include_task-playbook.yml', 'start_line': 1, 'end_line': 2, 'runner_ident': 'bcaf6fb2-cc29-4ae0-8748-8c7a61d02267', 'created': '2026-03-04T01:31:08.070736+00:00'}
+2026-03-04T01:31:08.071521+00:00 CRITICAL 'ansible_navigator.actions.run_a950._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'ef4c03a8-ac00-4b65-8263-2427655656c4', 'counter': 3, 'stdout': '', 'start_line': 2, 'end_line': 3, 'runner_ident': 'bcaf6fb2-cc29-4ae0-8748-8c7a61d02267', 'created': '2026-03-04T01:31:08.070832+00:00'}
+2026-03-04T01:31:08.071615+00:00 CRITICAL 'ansible_navigator.actions.run_a950._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'dcb8678d-3600-4d3c-befa-f382b6d072f6', 'counter': 4, 'stdout': '  play #1 (localhost): Using import_task or include_task keywords\tTAGS: []', 'start_line': 3, 'end_line': 4, 'runner_ident': 'bcaf6fb2-cc29-4ae0-8748-8c7a61d02267', 'created': '2026-03-04T01:31:08.070902+00:00'}
+2026-03-04T01:31:08.071681+00:00 CRITICAL 'ansible_navigator.actions.run_a950._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'f55ccece-86ac-4563-a8d0-f49e21abe0eb', 'counter': 5, 'stdout': '    tasks:', 'start_line': 4, 'end_line': 5, 'runner_ident': 'bcaf6fb2-cc29-4ae0-8748-8c7a61d02267', 'created': '2026-03-04T01:31:08.070974+00:00'}
+2026-03-04T01:31:08.071716+00:00 CRITICAL 'ansible_navigator.actions.run_a950._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '118e83ec-3385-4087-b597-e64a6b1cd986', 'counter': 6, 'stdout': '      Task1.yml Tasks to be included or imported\tTAGS: []', 'start_line': 5, 'end_line': 6, 'runner_ident': 'bcaf6fb2-cc29-4ae0-8748-8c7a61d02267', 'created': '2026-03-04T01:31:08.071036+00:00'}
+2026-03-04T01:31:08.071802+00:00 CRITICAL 'ansible_navigator.actions.run_a950._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'c1c08a80-7e7a-4820-8f3f-40ada0429a6e', 'counter': 7, 'stdout': '      debug\tTAGS: []', 'start_line': 6, 'end_line': 7, 'runner_ident': 'bcaf6fb2-cc29-4ae0-8748-8c7a61d02267', 'created': '2026-03-04T01:31:08.071329+00:00'}
+2026-03-04T01:31:08.173203+00:00 CRITICAL 'ansible_navigator.actions.run_a950._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '964d8972-e503-4235-9ab7-ce6e3d04213e', 'counter': 8, 'stdout': '      Using include_task\tTAGS: []', 'start_line': 7, 'end_line': 8, 'runner_ident': 'bcaf6fb2-cc29-4ae0-8748-8c7a61d02267', 'created': '2026-03-04T01:31:08.072272+00:00'}
+2026-03-04T01:31:29.087917+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'fbe90e11-4c2c-46de-b062-22b85540c67f', 'counter': 1, 'stdout': 'usage: ansible-playbook [-h] [--version] [-v] [--private-key PRIVATE_KEY_FILE]', 'start_line': 0, 'end_line': 1, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.087601+00:00'}
+2026-03-04T01:31:29.089136+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'dbdb7b35-ce9d-4d80-affc-121adb33b8be', 'counter': 2, 'stdout': '                        [-u REMOTE_USER] [-c CONNECTION] [-T TIMEOUT]', 'start_line': 1, 'end_line': 2, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088256+00:00'}
+2026-03-04T01:31:29.089242+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '192c2032-3f83-4acc-8744-34cbc465115b', 'counter': 3, 'stdout': '                        [--ssh-common-args SSH_COMMON_ARGS]', 'start_line': 2, 'end_line': 3, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088360+00:00'}
+2026-03-04T01:31:29.089278+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'd86cac7b-4949-4c9e-bc20-a15890460ad5', 'counter': 4, 'stdout': '                        [--sftp-extra-args SFTP_EXTRA_ARGS]', 'start_line': 3, 'end_line': 4, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088412+00:00'}
+2026-03-04T01:31:29.089323+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '135273f9-2964-4782-aa2b-1b45c5f0c8ef', 'counter': 5, 'stdout': '                        [--scp-extra-args SCP_EXTRA_ARGS]', 'start_line': 4, 'end_line': 5, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088472+00:00'}
+2026-03-04T01:31:29.089351+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b45ca9fd-96a0-4917-b8d4-e5697c33d97a', 'counter': 6, 'stdout': '                        [--ssh-extra-args SSH_EXTRA_ARGS]', 'start_line': 5, 'end_line': 6, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088506+00:00'}
+2026-03-04T01:31:29.089376+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'cbd569a5-0a66-4a92-850b-c9ff775ff47d', 'counter': 7, 'stdout': '                        [-k | --connection-password-file CONNECTION_PASSWORD_FILE]', 'start_line': 6, 'end_line': 7, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088565+00:00'}
+2026-03-04T01:31:29.089421+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'fe9cbc9a-2304-416f-950d-0ce38f180eba', 'counter': 8, 'stdout': '                        [--force-handlers] [--flush-cache] [-b]', 'start_line': 7, 'end_line': 8, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088614+00:00'}
+2026-03-04T01:31:29.089470+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'ff74902a-cb07-43e1-b3e4-ecb5542182a2', 'counter': 9, 'stdout': '                        [--become-method BECOME_METHOD]', 'start_line': 8, 'end_line': 9, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088665+00:00'}
+2026-03-04T01:31:29.089501+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b2a01edc-8b04-45d4-adcb-06fca695d910', 'counter': 10, 'stdout': '                        [--become-user BECOME_USER]', 'start_line': 9, 'end_line': 10, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088699+00:00'}
+2026-03-04T01:31:29.089545+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '70781dd9-fe25-4a74-a286-f391aed2699b', 'counter': 11, 'stdout': '                        [-K | --become-password-file BECOME_PASSWORD_FILE]', 'start_line': 10, 'end_line': 11, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088727+00:00'}
+2026-03-04T01:31:29.089588+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '5384cd36-d239-4484-b8a3-415b4283cdba', 'counter': 12, 'stdout': '                        [-t TAGS] [--skip-tags SKIP_TAGS] [-C] [-D]', 'start_line': 11, 'end_line': 12, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088778+00:00'}
+2026-03-04T01:31:29.089615+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'c1fb59c6-48b0-4e68-9a57-79c22a333262', 'counter': 13, 'stdout': '                        [-i INVENTORY] [--list-hosts] [-l SUBSET]', 'start_line': 12, 'end_line': 13, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088833+00:00'}
+2026-03-04T01:31:29.089699+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'e254735d-d000-4b48-934a-07127a78993a', 'counter': 14, 'stdout': '                        [-e EXTRA_VARS] [--vault-id VAULT_IDS]', 'start_line': 13, 'end_line': 14, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.088860+00:00'}
+2026-03-04T01:31:29.191275+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '0c15aeca-5ca5-4f31-9ea6-b732b2e55569', 'counter': 15, 'stdout': '                        [--ask-vault-password | --vault-password-file VAULT_PASSWORD_FILES]', 'start_line': 14, 'end_line': 15, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090176+00:00'}
+2026-03-04T01:31:29.191367+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '190842c3-c9ad-49ef-ad43-2d4ecf9ee07a', 'counter': 16, 'stdout': '                        [-f FORKS] [-M MODULE_PATH] [--syntax-check]', 'start_line': 15, 'end_line': 16, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090235+00:00'}
+2026-03-04T01:31:29.191399+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'a7a79b70-0f7a-4237-ac3a-14e9e98098c1', 'counter': 17, 'stdout': '                        [--list-tasks] [--list-tags] [--step]', 'start_line': 16, 'end_line': 17, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090328+00:00'}
+2026-03-04T01:31:29.191427+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '5b5cb90a-37ef-4a0a-800d-432096b07147', 'counter': 18, 'stdout': '                        [--start-at-task START_AT_TASK]', 'start_line': 17, 'end_line': 18, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090363+00:00'}
+2026-03-04T01:31:29.191450+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '6f57ff2d-6937-4fb4-83ea-64675e605b7b', 'counter': 19, 'stdout': '                        playbook [playbook ...]', 'start_line': 18, 'end_line': 19, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090414+00:00'}
+2026-03-04T01:31:29.191472+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '198c0e31-b9dc-4ec7-a8a8-5715da76c493', 'counter': 20, 'stdout': 'ansible-playbook: error: unrecognized arguments: --stdout', 'start_line': 19, 'end_line': 20, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090498+00:00'}
+2026-03-04T01:31:29.191555+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '69bdb24c-084a-4241-9a36-a0c57f761f2a', 'counter': 21, 'stdout': ' ', 'start_line': 20, 'end_line': 21, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090569+00:00'}
+2026-03-04T01:31:29.191607+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b7d743d2-25cb-4853-aa7c-6e7c54f37ae5', 'counter': 22, 'stdout': 'usage: ansible-playbook [-h] [--version] [-v] [--private-key PRIVATE_KEY_FILE]', 'start_line': 21, 'end_line': 22, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090620+00:00'}
+2026-03-04T01:31:29.191631+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '4242ea55-1c7c-4591-a231-54f05f50a9ed', 'counter': 23, 'stdout': '                        [-u REMOTE_USER] [-c CONNECTION] [-T TIMEOUT]', 'start_line': 22, 'end_line': 23, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090677+00:00'}
+2026-03-04T01:31:29.191653+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b23bcdf3-d93f-4dd9-a377-2b6889c2a19c', 'counter': 24, 'stdout': '                        [--ssh-common-args SSH_COMMON_ARGS]', 'start_line': 23, 'end_line': 24, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090725+00:00'}
+2026-03-04T01:31:29.191673+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b7223987-a8f7-4fba-8594-4414efd0cc38', 'counter': 25, 'stdout': '                        [--sftp-extra-args SFTP_EXTRA_ARGS]', 'start_line': 24, 'end_line': 25, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090758+00:00'}
+2026-03-04T01:31:29.191693+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '5f7626f3-e0c6-43aa-bede-83a40e8b4763', 'counter': 26, 'stdout': '                        [--scp-extra-args SCP_EXTRA_ARGS]', 'start_line': 25, 'end_line': 26, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090781+00:00'}
+2026-03-04T01:31:29.191714+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '6a4504ad-34e4-41c7-b1d8-12d2cdc6051f', 'counter': 27, 'stdout': '                        [--ssh-extra-args SSH_EXTRA_ARGS]', 'start_line': 26, 'end_line': 27, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090804+00:00'}
+2026-03-04T01:31:29.191740+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '9cbe2cb6-516d-4201-8b92-2022181ebe26', 'counter': 28, 'stdout': '                        [-k | --connection-password-file CONNECTION_PASSWORD_FILE]', 'start_line': 27, 'end_line': 28, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090830+00:00'}
+2026-03-04T01:31:29.191762+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '554b23b8-00fd-4f18-8afd-bfb32344558b', 'counter': 29, 'stdout': '                        [--force-handlers] [--flush-cache] [-b]', 'start_line': 28, 'end_line': 29, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090857+00:00'}
+2026-03-04T01:31:29.191783+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '64674e74-d5f4-4f03-8806-ce8828153e71', 'counter': 30, 'stdout': '                        [--become-method BECOME_METHOD]', 'start_line': 29, 'end_line': 30, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090881+00:00'}
+2026-03-04T01:31:29.191803+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '16276b67-7b7a-43e9-aae5-695b142c06eb', 'counter': 31, 'stdout': '                        [--become-user BECOME_USER]', 'start_line': 30, 'end_line': 31, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.090905+00:00'}
+2026-03-04T01:31:29.191824+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'ed999a5f-9d6f-43ac-988e-b3a1a8c18542', 'counter': 32, 'stdout': '                        [-K | --become-password-file BECOME_PASSWORD_FILE]', 'start_line': 31, 'end_line': 32, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091368+00:00'}
+2026-03-04T01:31:29.191845+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '2bc63a06-9cca-475d-932f-06cfa8fb9b39', 'counter': 33, 'stdout': '                        [-t TAGS] [--skip-tags SKIP_TAGS] [-C] [-D]', 'start_line': 32, 'end_line': 33, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091426+00:00'}
+2026-03-04T01:31:29.191866+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '5be2d7ee-6e50-4c3c-9a84-519eace04bc2', 'counter': 34, 'stdout': '                        [-i INVENTORY] [--list-hosts] [-l SUBSET]', 'start_line': 33, 'end_line': 34, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091473+00:00'}
+2026-03-04T01:31:29.191886+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '6ecf85a8-781e-479b-9067-9620b817434e', 'counter': 35, 'stdout': '                        [-e EXTRA_VARS] [--vault-id VAULT_IDS]', 'start_line': 34, 'end_line': 35, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091497+00:00'}
+2026-03-04T01:31:29.191907+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '10868f25-bbab-4736-84bc-47d8872d03b6', 'counter': 36, 'stdout': '                        [--ask-vault-password | --vault-password-file VAULT_PASSWORD_FILES]', 'start_line': 35, 'end_line': 36, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091528+00:00'}
+2026-03-04T01:31:29.191929+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'e2a0cbdc-a0c2-49f1-b29d-391d1b8242a7', 'counter': 37, 'stdout': '                        [-f FORKS] [-M MODULE_PATH] [--syntax-check]', 'start_line': 36, 'end_line': 37, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091559+00:00'}
+2026-03-04T01:31:29.191950+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'ef668c4e-d4d1-4bdd-99b1-aa2242e8b822', 'counter': 38, 'stdout': '                        [--list-tasks] [--list-tags] [--step]', 'start_line': 37, 'end_line': 38, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091581+00:00'}
+2026-03-04T01:31:29.191970+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '17a52e11-ba6b-4d25-983d-44a88b2b9d12', 'counter': 39, 'stdout': '                        [--start-at-task START_AT_TASK]', 'start_line': 38, 'end_line': 39, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091602+00:00'}
+2026-03-04T01:31:29.192006+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'e6f37ebc-8b7e-4d74-8e70-ab3005711ed0', 'counter': 40, 'stdout': '                        playbook [playbook ...]', 'start_line': 39, 'end_line': 40, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091644+00:00'}
+2026-03-04T01:31:29.192029+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'e508023d-1311-44ba-a743-a86f247b90f5', 'counter': 41, 'stdout': '', 'start_line': 40, 'end_line': 41, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091701+00:00'}
+2026-03-04T01:31:29.192051+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '09f5c17d-0f18-470e-aa2c-f0ae060231e6', 'counter': 42, 'stdout': 'Runs Ansible playbooks, executing the defined tasks on the targeted hosts.', 'start_line': 41, 'end_line': 42, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091750+00:00'}
+2026-03-04T01:31:29.192067+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'c5c8d592-8d68-45ae-bddf-38a44e349693', 'counter': 43, 'stdout': '', 'start_line': 42, 'end_line': 43, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091791+00:00'}
+2026-03-04T01:31:29.192089+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '66ba39d5-3e78-4755-98fa-8a29302bf496', 'counter': 44, 'stdout': 'positional arguments:', 'start_line': 43, 'end_line': 44, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091840+00:00'}
+2026-03-04T01:31:29.192109+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '26043834-ae26-47c1-9d11-7054753e6dd2', 'counter': 45, 'stdout': '  playbook              Playbook(s)', 'start_line': 44, 'end_line': 45, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091879+00:00'}
+2026-03-04T01:31:29.192124+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '0ba1e1d9-c48f-40e5-815e-f43467f152a0', 'counter': 46, 'stdout': '', 'start_line': 45, 'end_line': 46, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091942+00:00'}
+2026-03-04T01:31:29.192147+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'c0a867d7-902d-423b-9858-4d4ed0d630fd', 'counter': 47, 'stdout': 'options:', 'start_line': 46, 'end_line': 47, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.091997+00:00'}
+2026-03-04T01:31:29.192168+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'f282d616-e838-4a67-a560-da31aaccd1cf', 'counter': 48, 'stdout': '  --ask-vault-password, --ask-vault-pass', 'start_line': 47, 'end_line': 48, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092056+00:00'}
+2026-03-04T01:31:29.192188+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '08a7cda9-ed5c-42ce-ba1b-c2a789ba16e0', 'counter': 49, 'stdout': '                        ask for vault password', 'start_line': 48, 'end_line': 49, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092102+00:00'}
+2026-03-04T01:31:29.192209+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '67a6ffc2-b670-4f69-be77-4706d836bb52', 'counter': 50, 'stdout': '  --become-password-file BECOME_PASSWORD_FILE, --become-pass-file BECOME_PASSWORD_FILE', 'start_line': 49, 'end_line': 50, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092159+00:00'}
+2026-03-04T01:31:29.192229+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '27bab9c4-c8c7-4c27-ac58-5ed5a99931fd', 'counter': 51, 'stdout': '                        Become password file', 'start_line': 50, 'end_line': 51, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092219+00:00'}
+2026-03-04T01:31:29.192250+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '24db4594-7d6c-44a7-b439-3c6eb8651fd0', 'counter': 52, 'stdout': '  --connection-password-file CONNECTION_PASSWORD_FILE, --conn-pass-file CONNECTION_PASSWORD_FILE', 'start_line': 51, 'end_line': 52, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092268+00:00'}
+2026-03-04T01:31:29.192277+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'dfe125a2-62c6-46d5-b959-1bc2e1b0c766', 'counter': 53, 'stdout': '                        Connection password file', 'start_line': 52, 'end_line': 53, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092308+00:00'}
+2026-03-04T01:31:29.192299+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '6cd23b17-457b-491f-ad59-01375df07a52', 'counter': 54, 'stdout': '  --flush-cache         clear the fact cache for every host in inventory', 'start_line': 53, 'end_line': 54, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092332+00:00'}
+2026-03-04T01:31:29.192321+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '473f6d49-a8b8-40ed-9c71-171ba1160066', 'counter': 55, 'stdout': '  --force-handlers      run handlers even if a task fails', 'start_line': 54, 'end_line': 55, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092354+00:00'}
+2026-03-04T01:31:29.192344+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '54fe0192-3455-488a-a415-a9334a8a1f8b', 'counter': 56, 'stdout': '  --list-hosts          outputs a list of matching hosts; does not execute', 'start_line': 55, 'end_line': 56, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092376+00:00'}
+2026-03-04T01:31:29.192366+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b5117d36-1b89-478a-a349-92727ae08af7', 'counter': 57, 'stdout': '                        anything else', 'start_line': 56, 'end_line': 57, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092398+00:00'}
+2026-03-04T01:31:29.192387+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '66166fd9-4ab3-4583-9af9-0fb34e1140e8', 'counter': 58, 'stdout': '  --list-tags           list all available tags', 'start_line': 57, 'end_line': 58, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092426+00:00'}
+2026-03-04T01:31:29.192409+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '48eeee37-6c61-4f3e-986e-fd67e11a042b', 'counter': 59, 'stdout': '  --list-tasks          list all tasks that would be executed', 'start_line': 58, 'end_line': 59, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092454+00:00'}
+2026-03-04T01:31:29.192430+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '3d428a33-e475-4410-b25e-7c41995fbbd3', 'counter': 60, 'stdout': '  --skip-tags SKIP_TAGS', 'start_line': 59, 'end_line': 60, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092543+00:00'}
+2026-03-04T01:31:29.192451+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'a05160a8-faac-4dbf-8edc-e4d9823da454', 'counter': 61, 'stdout': '                        only run plays and tasks whose tags do not match these', 'start_line': 60, 'end_line': 61, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092624+00:00'}
+2026-03-04T01:31:29.192472+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'de12b57d-e0a8-4474-a74e-8cc7521c6b49', 'counter': 62, 'stdout': '                        values', 'start_line': 61, 'end_line': 62, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092654+00:00'}
+2026-03-04T01:31:29.192548+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '37164a3a-80ed-4786-93cd-34314d9f70b0', 'counter': 63, 'stdout': '  --start-at-task START_AT_TASK', 'start_line': 62, 'end_line': 63, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092679+00:00'}
+2026-03-04T01:31:29.192577+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '0550f42d-85f5-458a-b450-479fb492a3ec', 'counter': 64, 'stdout': '                        start the playbook at the task matching this name', 'start_line': 63, 'end_line': 64, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092706+00:00'}
+2026-03-04T01:31:29.192613+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '6bc6f55c-8076-4adb-bcbd-cdebb8dd1bd9', 'counter': 65, 'stdout': '  --step                one-step-at-a-time: confirm each task before running', 'start_line': 64, 'end_line': 65, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092736+00:00'}
+2026-03-04T01:31:29.192637+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'def09d2a-8cbd-44cc-9f8e-f582d72c14c7', 'counter': 66, 'stdout': '  --syntax-check        perform a syntax check on the playbook, but do not', 'start_line': 65, 'end_line': 66, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092764+00:00'}
+2026-03-04T01:31:29.192677+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '662e64f9-c687-482e-a146-c2d3938173d4', 'counter': 67, 'stdout': '                        execute it', 'start_line': 66, 'end_line': 67, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092790+00:00'}
+2026-03-04T01:31:29.192701+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'd798ed4c-2f52-469d-b37c-caf5abef765c', 'counter': 68, 'stdout': '  --vault-id VAULT_IDS  the vault identity to use', 'start_line': 67, 'end_line': 68, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.092819+00:00'}
+2026-03-04T01:31:29.192736+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '1a079d68-ce53-40f2-9558-dcfa01101fb4', 'counter': 69, 'stdout': '  --vault-password-file VAULT_PASSWORD_FILES, --vault-pass-file VAULT_PASSWORD_FILES', 'start_line': 68, 'end_line': 69, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.093837+00:00'}
+2026-03-04T01:31:29.192757+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'cb4423c6-ca9c-4d58-8653-ec4f82284f70', 'counter': 70, 'stdout': '                        vault password file', 'start_line': 69, 'end_line': 70, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.093907+00:00'}
+2026-03-04T01:31:29.192777+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'c9768d4c-5fb8-4e76-b596-c7a5f1d99d15', 'counter': 71, 'stdout': "  --version             show program's version number, config file location,", 'start_line': 70, 'end_line': 71, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.093939+00:00'}
+2026-03-04T01:31:29.192797+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '90b3d892-6f59-43ac-b64f-241d061d98e7', 'counter': 72, 'stdout': '                        configured module search path, module location,', 'start_line': 71, 'end_line': 72, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.093992+00:00'}
+2026-03-04T01:31:29.192820+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'ef72bb56-2eda-453a-a75e-f6a7c5cb1466', 'counter': 73, 'stdout': '                        executable location and exit', 'start_line': 72, 'end_line': 73, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094018+00:00'}
+2026-03-04T01:31:29.192841+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '6aa7473c-c626-4af4-8346-6d9836a8c65c', 'counter': 74, 'stdout': "  -C, --check           don't make any changes; instead, try to predict some", 'start_line': 73, 'end_line': 74, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094041+00:00'}
+2026-03-04T01:31:29.192863+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'daec8cda-524d-4dc2-94a8-8f37e5d779f9', 'counter': 75, 'stdout': '                        of the changes that may occur', 'start_line': 74, 'end_line': 75, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094127+00:00'}
+2026-03-04T01:31:29.192884+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b6843e6d-9a6c-4d0a-92f8-e630906f5271', 'counter': 76, 'stdout': '  -D, --diff            when changing (small) files and templates, show the', 'start_line': 75, 'end_line': 76, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094163+00:00'}
+2026-03-04T01:31:29.192904+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '33043dda-f9ac-476c-9060-dc7b3d2752fd', 'counter': 77, 'stdout': '                        differences in those files; works great with --check', 'start_line': 76, 'end_line': 77, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094187+00:00'}
+2026-03-04T01:31:29.192924+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '35f337d2-9455-4e1b-b1ee-6f2ea6d4e1c2', 'counter': 78, 'stdout': '  -K, --ask-become-pass', 'start_line': 77, 'end_line': 78, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094210+00:00'}
+2026-03-04T01:31:29.192944+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '9facf973-3971-45c3-93f5-7e7925462c40', 'counter': 79, 'stdout': '                        ask for privilege escalation password', 'start_line': 78, 'end_line': 79, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094244+00:00'}
+2026-03-04T01:31:29.192965+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '9958389c-551d-489d-b605-a3a83278a2a5', 'counter': 80, 'stdout': '  -M MODULE_PATH, --module-path MODULE_PATH', 'start_line': 79, 'end_line': 80, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094267+00:00'}
+2026-03-04T01:31:29.193004+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'd75df602-13d6-429f-99df-639d2297bdc3', 'counter': 81, 'stdout': '                        prepend colon-separated path(s) to module library', 'start_line': 80, 'end_line': 81, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094299+00:00'}
+2026-03-04T01:31:29.193033+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '347238b0-f8df-4785-9226-085dba98b00d', 'counter': 82, 'stdout': '                        (default={{ ANSIBLE_HOME ~', 'start_line': 81, 'end_line': 82, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094325+00:00'}
+2026-03-04T01:31:29.193056+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '8d916b32-3341-4341-bdba-4548c3e880d2', 'counter': 83, 'stdout': '                        "/plugins/modules:/usr/share/ansible/plugins/modules"', 'start_line': 82, 'end_line': 83, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094349+00:00'}
+2026-03-04T01:31:29.193080+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '593f21be-48dd-4e75-a3a7-292d6f151963', 'counter': 84, 'stdout': '                        }})', 'start_line': 83, 'end_line': 84, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094372+00:00'}
+2026-03-04T01:31:29.193101+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '5d3dba74-ba7b-4d1a-a3b6-b4f23bd63279', 'counter': 85, 'stdout': '  -e EXTRA_VARS, --extra-vars EXTRA_VARS', 'start_line': 84, 'end_line': 85, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094416+00:00'}
+2026-03-04T01:31:29.193121+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '56dc8d07-d479-4c59-9bc7-0f5e9fc4b42d', 'counter': 86, 'stdout': '                        set additional variables as key=value or YAML/JSON, if', 'start_line': 85, 'end_line': 86, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094569+00:00'}
+2026-03-04T01:31:29.193141+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '0baa79ec-40ed-4835-9d7f-e85f966e490c', 'counter': 87, 'stdout': '                        filename prepend with @', 'start_line': 86, 'end_line': 87, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094663+00:00'}
+2026-03-04T01:31:29.193161+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '8d7fbb87-7faa-44e7-b45c-970f96c68843', 'counter': 88, 'stdout': '  -f FORKS, --forks FORKS', 'start_line': 87, 'end_line': 88, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094727+00:00'}
+2026-03-04T01:31:29.193181+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '1e2fb421-4ad4-4997-b3a0-a401e3efda3e', 'counter': 89, 'stdout': '                        specify number of parallel processes to use', 'start_line': 88, 'end_line': 89, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094796+00:00'}
+2026-03-04T01:31:29.193201+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b7c058b1-06b8-4093-81fe-f79e4cf2a5e8', 'counter': 90, 'stdout': '                        (default=5)', 'start_line': 89, 'end_line': 90, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094834+00:00'}
+2026-03-04T01:31:29.193221+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'f366b285-f5e8-461f-976a-61f7a11e3617', 'counter': 91, 'stdout': '  -h, --help            show this help message and exit', 'start_line': 90, 'end_line': 91, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094877+00:00'}
+2026-03-04T01:31:29.193240+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '785ed2f1-d4d4-4c4f-9368-f1cdbfd8b48f', 'counter': 92, 'stdout': '  -i INVENTORY, --inventory INVENTORY, --inventory-file INVENTORY', 'start_line': 91, 'end_line': 92, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094922+00:00'}
+2026-03-04T01:31:29.193260+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '62828c3c-a0c4-4469-9ca9-c78769bcca46', 'counter': 93, 'stdout': '                        specify inventory host path or comma separated host', 'start_line': 92, 'end_line': 93, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.094977+00:00'}
+2026-03-04T01:31:29.193284+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '421b1024-e50a-4577-842a-26b6a230df58', 'counter': 94, 'stdout': '                        list. --inventory-file is deprecated', 'start_line': 93, 'end_line': 94, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.095041+00:00'}
+2026-03-04T01:31:29.193304+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '3c97e566-da2d-4e85-a3f9-4c54da325a38', 'counter': 95, 'stdout': '  -k, --ask-pass        ask for connection password', 'start_line': 94, 'end_line': 95, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.095098+00:00'}
+2026-03-04T01:31:29.193324+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '4b43f141-bb6a-4c33-b8c2-d436a39df651', 'counter': 96, 'stdout': '  -l SUBSET, --limit SUBSET', 'start_line': 95, 'end_line': 96, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.095156+00:00'}
+2026-03-04T01:31:29.193344+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'cbae3887-a835-484b-acc5-63ae211f5a28', 'counter': 97, 'stdout': '                        further limit selected hosts to an additional pattern', 'start_line': 96, 'end_line': 97, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.095223+00:00'}
+2026-03-04T01:31:29.193364+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'e3ed3692-bcc2-4629-92a1-7d4bf426c6ba', 'counter': 98, 'stdout': '  -t TAGS, --tags TAGS  only run plays and tasks tagged with these values', 'start_line': 97, 'end_line': 98, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.095357+00:00'}
+2026-03-04T01:31:29.193384+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '11e1cff7-f854-4938-bc8b-86ebbee53974', 'counter': 99, 'stdout': '  -v, --verbose         Causes Ansible to print more debug messages. Adding', 'start_line': 98, 'end_line': 99, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.095553+00:00'}
+2026-03-04T01:31:29.193404+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '7d21ac19-560c-4ceb-8be2-f7c3a8a166e9', 'counter': 100, 'stdout': '                        multiple -v will increase the verbosity, the builtin', 'start_line': 99, 'end_line': 100, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.095600+00:00'}
+2026-03-04T01:31:29.193424+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '44ef1392-58ae-4282-97e1-e34fc3f233dd', 'counter': 101, 'stdout': '                        plugins currently evaluate up to -vvvvvv. A reasonable', 'start_line': 100, 'end_line': 101, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.095629+00:00'}
+2026-03-04T01:31:29.193444+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '574f21bf-9e55-481a-a333-fce4d5a93fc5', 'counter': 102, 'stdout': '                        level to start is -vvv, connection debugging might', 'start_line': 101, 'end_line': 102, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096228+00:00'}
+2026-03-04T01:31:29.193466+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'a446437f-31d8-4220-8c5a-1c7ad6badcc0', 'counter': 103, 'stdout': '                        require -vvvv.', 'start_line': 102, 'end_line': 103, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096302+00:00'}
+2026-03-04T01:31:29.193543+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '5e004062-2294-43b0-8102-850c41f04313', 'counter': 104, 'stdout': '', 'start_line': 103, 'end_line': 104, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096346+00:00'}
+2026-03-04T01:31:29.193574+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'bfa8a970-d327-424c-b4f5-6fe03f0d2296', 'counter': 105, 'stdout': 'Connection Options:', 'start_line': 104, 'end_line': 105, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096369+00:00'}
+2026-03-04T01:31:29.193609+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'f53eb312-dfed-44bd-b22f-e2e64f0f81d0', 'counter': 106, 'stdout': '  control as whom and how to connect to hosts', 'start_line': 105, 'end_line': 106, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096418+00:00'}
+2026-03-04T01:31:29.193625+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '3e69812e-6ad2-4e73-b37b-d641e3ec0c33', 'counter': 107, 'stdout': '', 'start_line': 106, 'end_line': 107, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096439+00:00'}
+2026-03-04T01:31:29.193646+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'fd36ff56-6236-4344-88e0-f7db73fedf33', 'counter': 108, 'stdout': '  --private-key PRIVATE_KEY_FILE, --key-file PRIVATE_KEY_FILE', 'start_line': 107, 'end_line': 108, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096463+00:00'}
+2026-03-04T01:31:29.193666+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'fe605af8-3374-4f65-b672-0c3c9c71e566', 'counter': 109, 'stdout': '                        use this file to authenticate the connection', 'start_line': 108, 'end_line': 109, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096490+00:00'}
+2026-03-04T01:31:29.193687+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '1e6a5622-882b-4c03-8456-c5bc0740cdbd', 'counter': 110, 'stdout': '  --scp-extra-args SCP_EXTRA_ARGS', 'start_line': 109, 'end_line': 110, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096513+00:00'}
+2026-03-04T01:31:29.193707+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'f90e41d4-e48e-4a94-a085-8fdffc55cf0c', 'counter': 111, 'stdout': '                        specify extra arguments to pass to scp only (e.g. -l)', 'start_line': 110, 'end_line': 111, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096553+00:00'}
+2026-03-04T01:31:29.193727+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '28b8d3fe-708c-4861-9b6e-d60f2fbd0033', 'counter': 112, 'stdout': '  --sftp-extra-args SFTP_EXTRA_ARGS', 'start_line': 111, 'end_line': 112, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096583+00:00'}
+2026-03-04T01:31:29.193751+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'ad9e1078-a032-425f-82b4-ed0d3dfc157c', 'counter': 113, 'stdout': '                        specify extra arguments to pass to sftp only (e.g. -f,', 'start_line': 112, 'end_line': 113, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096614+00:00'}
+2026-03-04T01:31:29.193772+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '0f550b92-0c44-4eb7-b1b5-c644ef3a00d7', 'counter': 114, 'stdout': '                        -l)', 'start_line': 113, 'end_line': 114, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096634+00:00'}
+2026-03-04T01:31:29.193791+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '343d0a8d-669d-4d33-82de-4a00e454c6b4', 'counter': 115, 'stdout': '  --ssh-common-args SSH_COMMON_ARGS', 'start_line': 114, 'end_line': 115, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096654+00:00'}
+2026-03-04T01:31:29.193811+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '1a1d0524-53e6-46f4-a40d-58d53adc7a9f', 'counter': 116, 'stdout': '                        specify common arguments to pass to sftp/scp/ssh (e.g.', 'start_line': 115, 'end_line': 116, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096674+00:00'}
+2026-03-04T01:31:29.193831+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '914494b8-b1a3-4574-9eb1-d25a1c61646d', 'counter': 117, 'stdout': '                        ProxyCommand)', 'start_line': 116, 'end_line': 117, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096693+00:00'}
+2026-03-04T01:31:29.193850+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '9f28a022-61df-4fb3-82d4-2a74489d84a7', 'counter': 118, 'stdout': '  --ssh-extra-args SSH_EXTRA_ARGS', 'start_line': 117, 'end_line': 118, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096712+00:00'}
+2026-03-04T01:31:29.193870+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '5a685967-fbba-422a-8043-09a28aec7306', 'counter': 119, 'stdout': '                        specify extra arguments to pass to ssh only (e.g. -R)', 'start_line': 118, 'end_line': 119, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096732+00:00'}
+2026-03-04T01:31:29.193890+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '4dd03f3e-190a-4d66-977a-6e6e90ff59f9', 'counter': 120, 'stdout': '  -T TIMEOUT, --timeout TIMEOUT', 'start_line': 119, 'end_line': 120, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096751+00:00'}
+2026-03-04T01:31:29.193910+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '554e68f5-8aaa-4fc1-830d-6e74e018ed2c', 'counter': 121, 'stdout': '                        override the connection timeout in seconds', 'start_line': 120, 'end_line': 121, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096800+00:00'}
+2026-03-04T01:31:29.193933+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'f230c62f-c65f-4a44-9367-bc241080c51d', 'counter': 122, 'stdout': '                        (default=10)', 'start_line': 121, 'end_line': 122, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096826+00:00'}
+2026-03-04T01:31:29.193954+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '7a79e53f-5b7b-445d-b7d6-210e3d2057d2', 'counter': 123, 'stdout': '  -c CONNECTION, --connection CONNECTION', 'start_line': 122, 'end_line': 123, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096849+00:00'}
+2026-03-04T01:31:29.193988+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'e6277459-165d-4dc9-ac9d-e307a1e7872a', 'counter': 124, 'stdout': '                        connection type to use (default=smart)', 'start_line': 123, 'end_line': 124, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096870+00:00'}
+2026-03-04T01:31:29.194017+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'f27d139b-3ec1-4fdb-8679-19cc8b970cb4', 'counter': 125, 'stdout': '  -u REMOTE_USER, --user REMOTE_USER', 'start_line': 124, 'end_line': 125, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096921+00:00'}
+2026-03-04T01:31:29.194037+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'ef8893bb-eeba-4557-b880-0ae5ce321185', 'counter': 126, 'stdout': '                        connect as this user (default=None)', 'start_line': 125, 'end_line': 126, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096941+00:00'}
+2026-03-04T01:31:29.194052+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'b1b58fb1-c5c3-4728-b819-830e58338b7b', 'counter': 127, 'stdout': '', 'start_line': 126, 'end_line': 127, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096961+00:00'}
+2026-03-04T01:31:29.194072+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '7e3f2be2-5ae3-4263-b67d-1405d199b75b', 'counter': 128, 'stdout': 'Privilege Escalation Options:', 'start_line': 127, 'end_line': 128, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.096982+00:00'}
+2026-03-04T01:31:29.194092+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '9d0a0edc-efd2-4b23-8807-543aefd33759', 'counter': 129, 'stdout': '  control how and which user you become as on target hosts', 'start_line': 128, 'end_line': 129, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097002+00:00'}
+2026-03-04T01:31:29.194106+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'cae91b92-3b1e-4aba-9f4f-f0d2cb181869', 'counter': 130, 'stdout': '', 'start_line': 129, 'end_line': 130, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097032+00:00'}
+2026-03-04T01:31:29.194125+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '8fced72f-64c9-414e-a527-17a3539e9fae', 'counter': 131, 'stdout': '  --become-method BECOME_METHOD', 'start_line': 130, 'end_line': 131, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097053+00:00'}
+2026-03-04T01:31:29.194148+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'd4609a13-cf86-472d-b351-7f05b52328b0', 'counter': 132, 'stdout': '                        privilege escalation method to use (default=sudo), use', 'start_line': 131, 'end_line': 132, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097080+00:00'}
+2026-03-04T01:31:29.194168+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'c0f707fa-a1c2-48dc-82b2-d40a1a36c1cf', 'counter': 133, 'stdout': '                        `ansible-doc -t become -l` to list valid choices.', 'start_line': 132, 'end_line': 133, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097100+00:00'}
+2026-03-04T01:31:29.194188+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '427a5a48-f724-4781-8091-9dbf140f8b36', 'counter': 134, 'stdout': '  --become-user BECOME_USER', 'start_line': 133, 'end_line': 134, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097119+00:00'}
+2026-03-04T01:31:29.194207+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '8f2dd595-cb8c-40e3-83e6-c8a3730362de', 'counter': 135, 'stdout': '                        run operations as this user (default=root)', 'start_line': 134, 'end_line': 135, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097139+00:00'}
+2026-03-04T01:31:29.194228+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': '44b7c304-2e3e-4017-adc0-e86e16541750', 'counter': 136, 'stdout': '  -b, --become          run operations with become (does not imply password', 'start_line': 135, 'end_line': 136, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097171+00:00'}
+2026-03-04T01:31:29.194248+00:00 CRITICAL 'ansible_navigator.actions.run_cf13._handle_message' Unhandled message from runner queue, discarded: {'event': 'verbose', 'uuid': 'e646aa42-421b-4b57-a7b6-7a1a301bfde9', 'counter': 137, 'stdout': '                        prompting)', 'start_line': 136, 'end_line': 137, 'runner_ident': 'fee6d900-5941-4229-9c45-2c601511d0f9', 'created': '2026-03-04T01:31:29.097192+00:00'}
+2026-03-04T04:55:57.570654+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/community/general/plugins/callback/tasks_only.py ComposerError (get_docstring): expected a single document in the stream
+  in "<unicode string>", line 3, column 1:
+    ansible_config: |-
+    ^
+but found another document
+  in "<unicode string>", line 7, column 1:
+    ---
+    ^
+2026-03-04T04:55:57.571149+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/community/general/plugins/inventory/incus.py ComposerError (get_docstring): expected a single document in the stream
+  in "<unicode string>", line 3, column 1:
+    plugin: community.general.incus
+    ^
+but found another document
+  in "<unicode string>", line 5, column 1:
+    ---
+    ^
+2026-03-04T04:55:57.571212+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/community/general/plugins/inventory/iocage.py ComposerError (get_docstring): expected a single document in the stream
+  in "<unicode string>", line 3, column 1:
+    plugin: community.general.iocage
+    ^
+but found another document
+  in "<unicode string>", line 7, column 1:
+    ---
+    ^
+2026-03-04T04:55:57.571241+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/inventory/aci_inventory_system.py ScannerError (get_docstring): mapping values are not allowed here
+  in "<unicode string>", line 2, column 22:
+        short_description: Cisco ACI inventory plugin
+                         ^
+2026-03-04T04:55:57.571279+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_dhcp_relay.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571302+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_dns_provider.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571320+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_l2out_extepg.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571337+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_bfd_multihop_node_policy.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571357+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_bgp_rr_node.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571373+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_ntp_server.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571389+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_interface_policy_port_channel_member.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571405+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_node_mgmt_epg.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571421+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_l2out.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571452+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_aaa_ssh_auth.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571468+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_fabric_pod_policy_group.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571483+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_interface_policy_bfd_multihop.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571501+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_access_switch_policy_group.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571515+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_ntp_policy.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571531+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_switch_access_config.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571546+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_vrf_multicast.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571560+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_l3out_bfd_interface_profile.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571575+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_dns_profile.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571589+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_fabric_switch_policy_group.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571605+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_switch_fabric_config.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571621+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_l2out_extepg_to_contract.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571636+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_static_node_mgmt_address.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571658+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_fabric_node_decommission.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571674+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_l3out_bfd_multihop_interface_profile.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571695+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_bgp_rr_asn.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571709+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_dhcp_relay_provider.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571724+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_l3out_extepg_to_contract.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571738+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_dns_domain.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:55:57.571755+00:00 ERROR 'ansible_navigator.actions.collections._parse' /root/learntoansible/collections/ansible_collections/cisco/aci/plugins/modules/aci_interface_policy_bfd.py ParserError (get_docstring): while parsing a block mapping
+  in "<unicode string>", line 1, column 1:
+    current:
+    ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 20, column 4:
+       error:
+       ^
+2026-03-04T04:56:07.060326+00:00 ERROR 'ansible_navigator.actions.doc._run_runner' Error occurred while fetching doc for plugin cisco.aci: '[WARNING]: cisco.aci was not found
+'
+2026-03-04T04:59:29.244858+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/inventory/aci_inventory_system.py', 'type': 'inventory'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.250000+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dhcp_relay.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.250579+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dns_provider.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.251419+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l2out_extepg.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.251587+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_bfd_multihop_node_policy.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.253721+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_bgp_rr_node.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.254226+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_ntp_server.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.254386+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_interface_policy_port_channel_member.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.254727+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_node_mgmt_epg.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.255338+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l2out.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.255736+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_aaa_ssh_auth.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.257358+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_fabric_pod_policy_group.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.258594+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_interface_policy_bfd_multihop.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.260660+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_access_switch_policy_group.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.261750+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_ntp_policy.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.262287+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_vrf_multicast.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.262494+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_switch_access_config.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.262728+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l3out_bfd_interface_profile.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.263496+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dns_profile.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.263748+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_fabric_switch_policy_group.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.264112+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_switch_fabric_config.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.264295+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l2out_extepg_to_contract.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.265109+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_static_node_mgmt_address.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.265376+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_fabric_node_decommission.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.265507+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l3out_bfd_multihop_interface_profile.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.265758+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_bgp_rr_asn.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.265946+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dhcp_relay_provider.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.266126+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l3out_extepg_to_contract.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.266318+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dns_domain.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T04:59:29.266763+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_interface_policy_bfd.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.371070+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/inventory/aci_inventory_system.py', 'type': 'inventory'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.374511+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dhcp_relay.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.377106+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dns_provider.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.379031+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l2out_extepg.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.379220+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_bfd_multihop_node_policy.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.380190+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_bgp_rr_node.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.380837+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_ntp_server.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.380969+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_interface_policy_port_channel_member.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.381361+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_node_mgmt_epg.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.382134+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l2out.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.382537+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_aaa_ssh_auth.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.384026+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_fabric_pod_policy_group.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.385108+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_interface_policy_bfd_multihop.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.387296+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_access_switch_policy_group.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.387945+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_ntp_policy.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.388426+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_vrf_multicast.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.388649+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_switch_access_config.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.388902+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l3out_bfd_interface_profile.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.389555+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dns_profile.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.389779+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_fabric_switch_policy_group.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.390082+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_switch_fabric_config.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.390254+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l2out_extepg_to_contract.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.391172+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_static_node_mgmt_address.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.391490+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_fabric_node_decommission.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.391603+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l3out_bfd_multihop_interface_profile.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.391797+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_bgp_rr_asn.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.391978+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dhcp_relay_provider.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.392084+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_l3out_extepg_to_contract.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.392254+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_dns_domain.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'
+2026-03-04T06:23:27.392590+00:00 ERROR 'ansible_navigator.actions.collections._build_collection_content_menu' error loading plugin doc {'path': 'plugins/modules/aci_interface_policy_bfd.py', 'type': 'module'}
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.12/site-packages/ansible_navigator/actions/collections.py", line 331, in _build_collection_content_menu
+    plugin = loaded["plugin"]
+             ~~~~~~^^^^^^^^^^
+KeyError: 'plugin'

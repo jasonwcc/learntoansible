@@ -1,0 +1,18 @@
+- name: Example of chapter 05 using loop with condition
+  hosts: localhost
+  vars:
+    users:
+    - ali
+    - chong
+    - root
+    - murthi
+    - jason
+    - lina
+    - mary
+
+  tasks:
+  - name: Using template module
+    template:
+      src: jinja2-for-count.j2
+      dest: /tmp/jinja2-for-count.txt
+
