@@ -1,0 +1,870 @@
+Chef Puppet - agentful
+
+vi /etc/hosts or DNS
+192.168.0.1  r9s1.example.com 
+192.168.0.2  rh10s1
+
+Control node + web ui
+- run playbook (written YAML) onto managed nodes
+- ssh (openssh suite)
+- configure inventory
+node1 ansible_host=r9s1.example.com
+node3 ansible_host=192.168.0.3
+
+
+declaratively syntax language
+- desired
+- universal
+vs
+imperative syntax language
+- scripting
+
+bash / ksh
+batch / powershell
+
+playbook
+create user
+create file
+delete directory
+
+ephemeral
+
+WinRM
+
+semanage fcontext
+restorecon -Rv
+
+Rhel v10.0 (with python 3.10) - installation 
+dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm 
+dnf install -y ansible-core
+
+dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm 
+dnf install -y ansible-core
+
+student / student
+root / redhat
+
+
+node1 ansible_host=r9s1.example.com
+node2 ansible_host=r9s2.example.com
+
+vi /etc/ansible/hosts
+[webservers]
+node1
+172.16.100.9[1:9]
+
+[dbservers]
+node2
+a.dns.example.com
+b.dns.example.com
+c.dns.example.com
+
+default ansible inventory
+/etc/ansible/hosts
+
+
+[]
+[all]
+node1
+node2
+node3
+
+[ungrouped]
+node3
+
+Inventory
+hosts
+group
+child group
+
+
+/etc/default/inventory
+
+/etc/default/ansible.cfg
+ansible
+ansible-playbook
+ansible-config list
+ansible-inventory
+
+ansible-navigator.yml
+ansible-navigator inventory
+ansible-navigator config
+
+playbook-artifact = log
+
+rhcsa
+node1
+node2 - password 
+
+task1 -- task2
+
+
+task1
+configure inventory
+- group1
+- host
+
+task3
+playbook.yaml on group1
+
+
+Playbook.yml
+- play1
+  hosts: node1
+  become: true
+  tasks
+    - user
+    - file
+
+- play2
+  hosts: node2
+  become: false
+  - tasks
+    - dnf
+    - service
+
+
+dnf -y install httpd
+systemctl enable httpd --now
+firewall-cmd --add-service=httpd --permanent
+
+
+r9s1.example.com 172.16.100.91
+r9s2.example.com 172.16.100.92
+
+
+/etc/hosts
+
+ansible inventory
+node1 ansible_host=r9s1.example.com
+
+FQDN
+
+FQCN
+
+LDAP 
+ admin = root
+
+ansible-playbook
+ansible-doc
+ansible
+ansible-inventory
+vs
+ansible-navigator run -m stdout
+- run the whole thing in execution environment / container
+
+vi inventory
+node1 ansible_host=172.16.100.91 
+
+su - devops
+vi createuser.yaml
+- name:
+  hosts: node1
+  tasks: 
+  - name: 
+    user: 
+      name: aaaa
+      state: present
+
+vi .ansible.cfg (INI-style)
+
+RBAC
+role1: date, shutdown, nmcli con
+
+ansible-doc yum
+
+ansible-navigator doc yum -m stdout
+- ee 
+
+Modules - idempotent
+user
+service
+dnf
+file
+stat
+
+ansible.builtin.lineinfile
+
+
+Task:
+Create a script name /devops/aaa.sh to install 2 repositories on each managed nodes.
+
+repository 1
+name=baseos
+description=aaaa aaaa aaaa
+BaseURL=https://domain18.example.com/rhgls/BaseOS
+GPG Check= Yes
+GPG Key = https://domain18.example.com/rhgls/keys/aaa
+Must be enabled
+repository 2
+name=appstream
+description=bbbb bbbb bbbb
+BaseURL=https://domain18.example.com/rhgls/AppStream
+GPG Check= Yes
+GPG Key = https://domain18.example.com/rhgls/keys/aaa
+Must be enabled
+
+su - devops
+vi aaa.sh
+ansible all -m yum_repository -a 'name=baseos description="aaaa aaaa aaaaa" baseurl=https://domain18.example.
+com/rhgls/BaseOS enabled=true gpgcheck=true gpgkey=https://domain18.example.com/rhgls/keys/aaa' -b
+ansible all -m yum_repository -a 'name=appstream description="bbbb bbbb bbbb" baseurl=https://domain18.exampl
+e.com/rhgls/AppStream enabled=true gpgcheck=true gpgkey=https://domain18.example.com/rhgls/keys/aaa' -b
+
+ssh
+- key
+
+
+automation
+
+vi /etc/sudoers
+
+
+httpd
+apache2
+vars:
+  var1: 100
+  var2: 200
+
+vars_files: 
+  vars/users
+
+
+/home/user1/projectA/
+ansible.cfg
+[defaults]
+inventory = tmp/inventory
+
+/tmp/inventory
+node1 ansible_host=r9s1.example.com
+node2 ansible_host=172.16.100.91
+
+[group1]
+node1
+node2
+  ...
+/tmp/inventory/group_vars/group1
+
+playbook.yml
+
+group_vars/group1
+var1: 100
+var2: 200
+
+ansible-navigator
+- new method
+- default generate artifact/log
+ansible-playbook
+
+Resume
+10:30AM IN / 1pm MY
+
+ansible-playbook site.yaml 
+ dnf:  
+   name:
+   state: 
+hosts: localhost
+
+
+
+var1: true
+var1: 123
+var1: "true"
+
+
+true = 1 = yes 
+false = 0 = no
+
+
+
+
+
+
+playbook:
+task1: create group1
+changed: 
+condition : it is not in OK or FAILED
+notify: handler1
+
+task2: create group2
+notify: handler1
+
+task3:
+
+
+handler: 
+  - name: handler1
+    create user1 
+       member of the group1
+ - name: handler2
+    create user2
+       member of the group2
+
+
+
+ACID
+
+
+
+get input x
+5
+if x=5
+then
+  true statements
+[elif x=6
+then
+  true statement]
+[else
+  false statements]
+
+resume at 4:23PM MYT / 1:53PM IST
+
+end if
+
+Linux
+mv
+cp
+touch
+mkdir
+chmod
+chgrp
+ls -l
+ln -s 
+ln 
+semanage fcontext -at samba_share_t /path/to/samba_file
+getsebool
+setsebool
+
+chown 
+
+rsync
+
+idempotent
+
+scp
+rsync -av
+
+
+ansible-navigator run -e user=jason  site.yaml
+
+vi simple-example.j2
+{{  }}
+
+/etc/ssh/sshd_config --> node1
+ListenAddress 172.16.100.91
+
+/etc/ssh/sshd_config --> node2
+ListenAddress 172.16.100.92
+
+vi projectA.yml
+- name: use jinja template
+  hosts: webservers
+
+  vars:
+    ssh_port: 2222
+    root_allowed: ya
+    groups_allowed: sshadmin, hrgroup
+    passwords_allowed: no
+    users:
+     - name: ali
+       group: hr
+     - name: root
+       group: sales
+     - name: mary
+      ...
+  tasks:
+  - template:
+      src: simple-example.j2
+      dest: /tmp/ssh/sshd_config 
+      mode: "0777"
+      owner: root
+simple-example.j2
+{% for host in group["dbservers"] %}
+...
+
+
+{% %}
+
+Playbook
+- plays
+  - tasks
+
+Playbook.yml
+- name: play1
+  hosts: webservers
+  become: false
+  vars:
+    var1: 200
+  tasks:
+  - include_tasks: tasks1.yml
+  - import_tasks: task2.yml
+    vars:
+      var1: 100
+
+- name: play2
+  hosts: dbservers
+  become: true
+  gather_facts: false
+  tasks:
+  - task21
+  - task22
+  - ..task40
+
+- name: play2
+  hosts: webservers-high-cpu
+  become: false
+  tasks:
+  - task1
+    dnf: 
+      name: httpd
+      state: present
+    
+  - task2
+    user
+  - ..task20
+
+
+tasks1.yml
+  - task1
+    dnf: 
+      name: httpd
+      state: present
+    
+  - task2
+    user
+  - ..task20
+
+task2.yml
+  - task1
+    dnf: 
+      name: mysql
+      state: present
+    
+  - task2
+    user
+  - ..task20
+
+
+
+
+
+
+playbook
+- include_tasks: taskfile1.yml
+
+taskfile1.yml
+task1
+task2
+task3
+task4
+
+
+node1	ansible_host=labhost1.example.com
+
+[new]
+192.168.1.1
+192.168.1.2
+192.168.1. ..
+192.168.1.10-20
+192.168.1.21-30
+192.168.1.31-40
+
+hosts: fe80[:]
+
+
+
+node1-node5
+[webservers]
+node1
+node2
+[dbservers]
+node3
+node4
+[proxy]
+node3
+
+Install httpd package to webservers
+Install latest httpd package to dbservers
+
+- name: Task 4
+  hosts: webservers
+  tasks:
+  - name: objective1
+    dnf:
+      name: httpd
+      state: present
+
+- name: Task 4
+  hosts: dbservers
+  tasks:
+  - name: objective2 
+    dnf:
+     name: httpd
+     state: latest
+
+
+Collections
+- Role1
+  - apache.webserver
+    - playbook.yml
+      - tasks.yml
+    - template.j2
+    - documentation
+    - license
+- Role2
+  - apache.kafka 
+    - playbook.yml
+      - tasks.yml
+    - template.j2
+    - documentation
+    - license
+- Python Modules
+- Plug-ins
+
+
+SOC
+
+
+vars:
+  var1: 100
+vars_files: users.txt
+
+users.txt
+users:
+ user1:
+   fn: abu
+   ln: bakar
+  user
+
+Linux SuSE
+- Novell
+- SAP
+
+var1
+
+var2
+
+
+
+
+RHEL
+- admin job/tasks
+- selinux :
+     semanage fcontext
+     restorecon -Rv
+     setsebool
+     semanage port
+     semanage user/role/login
+Ansible
+- role
+
+
+ansible.builtin.file
+  
+workstation = control node1, node2
+file1.yml
+file2.yml
+
+ansible-playbook file1.yml
+- tools/files
+
+ansible-navigator run
+- download execution environment / container
+
+ansible-galaxy collection
+ansible-doc
+
+ansible-navigator collection
+ansible-navigator doc
+
+yaml coding
+- indent
+- vertical spacing
+- best practice
+
+network connection=ssh
+sudo/su
+#
+{# #}
+- name: "playbook title"
+  hosts:
+  tasks:
+
+--syntax-check
+--check = dry-run / preview / smoke test
+
+name:
+hosts: all
+
+dnf:
+  name: httpd
+when: inventory_hostname in groups['webservers']
+
+dnf:
+  name: mariadb
+when: inventory_hostname in groups['dbservers']
+
+name:
+hosts: webservers
+tasks:
+- dnf:
+     name: httpd
+
+name:
+hosts: dbservers
+tasks:
+-  dnf:
+
+
+     name:    httpd
+
+
+
+control-node - Imran
+- playbook.yml Monday 1-Mar-2026
+  - task1
+  - task2
+managed node1 - pei ni
+  pkg user 
+managed node2 - Sneha
+
+1 month
+
+
+connection = ssh root / non-root
+- passwordless ssh
+if non-root 
+- sudo / privilege escalation
+- passwordless sudo
+
+
+ansible-playbook
+
+ssh-keygen
+ssh-copy-id
+
+
+shell, command, raw modules
+
+
+
+
+ansible-playbook --check playbook.yml
+task1: create dir
+check_mode: false
+task2
+task3
+task5: create file 
+when dir 
+
+package module
+dnf
+yum
+apt
+apk
+
+alpine
+
+vars:
+  packages:
+   - httpd
+   - mod_ssl
+
+
+dnf:
+
+loop: "{{ packages }}"
+
+developer Subscription 
+- 16 registered VM
+
+SCA
+
+1PM / 10:30AM
+
+useradd
+userdel
+usermod
+groupadd
+groupmod
+groupdel
+passwd
+
+gecko
+
+
+SSH
+- host key
+- user key
+
+/home/devops/.ssh/known_hosts
+- individual known host
+/etc/ssh/ssh_known_hosts
+
+
+DO374
+
+at - schedule execution cmds at specific times once
+crontab - schedule execution cmds at regularly/repetitive
+cmd1
+cmd2
+
+
+
+
+
+
+
+task1 - configuration1
+task2 - reboot
+task3 - configuration2
+
+
+lsblk
+fdisk / parted
+create pv -> vg -> lv 
+mkfs.ext
+vi /etc/fstab  / mount
+xfs_growfs 
+resize2fs
+
+storage_volumes:
+storage_pools:
+  
+Netapp
+
+df 
+
+RedHat
+ens160
+Fedora Core
+ens32
+
+ifconfig 
+vi /etc/network-ass
+ifcfg up
+netstat 
+ip 
+
+nmcli con 
+
+RHCSA
+
+interface (ens192)
+- profile1 : dhcp, enable ipv4,ipv6 --> up
+- profile2 : static, enable ipv4, wifi
+
+hostnamectl hostname
+
+- name: {{ ansible_fact..
+
+
+firewall-cmd --permanent add-service=http
+firewall-cmd --reload
+
+
+
+sudo dnf -y install ansible-core
+
+
+Task: Secret Vault
+Create /home/greg/ansible/locker.yml with following content
+--
+dev: imadev
+test: imatest
+...
+
+Encrypt locker.yml with password - "ILoveRedHat" store the password in /home/greg/ansible/files/secret.txt
+
+Steps:
+mkdir -p /home/greg/ansible/files
+echo "ILoveRedHat" > /home/greg/ansible/files/secret.txt
+
+ansible-vault create --vault-password-file /home/greg/ansible/files/secret.txt locker.yml
+--
+dev: imadev
+test: imatest
+...
+
+Task: 
+- Download http://example.com/users_list.txt into greg/ansible directory
+- Create /home/greg/ansible/users.yml playbook to run in webservers group to use users_list.txt with respective information:
+  - make sure users is member of opsmgr in supplementary group
+- set user's password based on locker.yml
+  - make sure to use sha512 algorithm to hash the password
+  - user with developer description will use dev variable as the password
+  - user with tester description will use test variable as the password 
+
+Steps:
+cd /home/greg/ansible
+wget http://example.com/users_list.txt 
+cat users_list.txt
+
+vi ansible.cfg
+[defaults]
+inventory = ./hosts
+
+RHCSA 18 tasks
+task: create file
+touch 
+task: 
+- 3 hours
+
+j2
+
+4 hours
+
+
+Task : reset password
+ansible-vault rekey --vault-o
+
+vg
+lvm
+resize lv
+name: 
+hosts: node1
+tasks:
+- name: dnf
+  dnf: 
+  
+hosts:
+
+
+Create custom role
+Download and use existing role
+- cd /home/sammy/ansible
+- wget
+Download and use existing collection
+
+
+
+
+
+AWX / Ansible automation hub
+- credential : key/user-password
+- launch playbook 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
