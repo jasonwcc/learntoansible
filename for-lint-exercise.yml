@@ -1,0 +1,20 @@
+- name: Configure servers with Ansible tools
+  hosts:  localhost
+  tasks:
+  - name:  Make sure tools are installed
+
+    package:
+      name:
+        - httpd
+        - git
+    
+        - autofs
+      state: absent
+  - name: Show messages
+    debug:
+      msg: "{{        item }}"
+    loop:
+    - one
+    -      two
+
+

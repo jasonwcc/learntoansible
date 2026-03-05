@@ -1,0 +1,9 @@
+- name: Copy host keys to remote servers
+  hosts: all
+  become: true
+  tasks:
+  - name: populate known_hosts on managed hosts
+    ansible.builtin.known_hosts:
+      path: /etc/ssh/ssh_known_hosts
+      name: r9s10
+      key: "{{ lookup('ansible.builtin.file', 'keys/allknown_hosts') }}" 

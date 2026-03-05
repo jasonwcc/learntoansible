@@ -1,0 +1,14 @@
+- name: Create some files and directories
+  hosts: localhost
+  tasks:
+  - file:
+      path: files/file1.txt
+      owner: root
+      mode: "0777"
+      state: touch
+
+  - file:
+      path: files/dir1
+      owner: root
+      mode: "0777"
+      state: directory

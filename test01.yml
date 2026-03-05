@@ -1,0 +1,13 @@
+- name: tewt
+  hosts: localhost
+  tasks:
+  - dnf:
+      name: 
+      - firewalld
+      - samba
+      state: present
+  - ansible.posix.firewalld:
+      service: samba
+      state: enabled
+      permanent: true
+      immediate: true

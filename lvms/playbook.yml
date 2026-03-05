@@ -1,0 +1,43 @@
+- name: Storage/LVMs configuration
+  hosts: clients
+  become: yes
+  vars_files: storage_vars.yml
+
+  tasks:
+  - name: Configure partitions
+    partitions:
+     device: "{{ item.device }}"
+     number: "{{ item.number }}"
+     part_start: "{{ item.start }}"
+     part_end: "{{ item.end }}"
+     state: present
+    loop: "{{ partitions }}"
+
+  - name: Configure VGs
+    lvg:
+     vg: "{{ item.name }}"
+     pvs: "{{ item.devices }}"
+    loop: "{{ volume_groups  }}"
+
+  - name: Configure LVs
+    lvol:
+     vg: "{{ item.vgroup }}"
+     lv: "{{ item.name }}"
+     size: "{{ item.size }}"
+     force: yes
+    loop: "{{ logical_volumes }}"
+
+  - name: Configure FSs
+    filesystem:
+     fstype: "{{ item.fstype }}"
+     dev: "/dev/{{ item.vgroup }}/{{ item.name }}"
+    loop: "{{ logical_volumes }}"
+
+  - name: Mount LVs
+    mount:
+     path: "{{ item.mount_path }}"
+     src: "/dev/{{ item.vgroup }}/{{ item.name }}"
+     state: mounted
+     fstype: "{{ item.fstype }}"
+    loop: "{{ logical_volumes }}"
+

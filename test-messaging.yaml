@@ -5,7 +5,7 @@
   tasks:
   - name: singleline
     debug:
-      msg: "hello world from {{ inventory_hostname }}"
+      msg: "hello world from {{ inventory_hostname }}
 
   - name: "multiline without anything"
     debug: 
@@ -31,7 +31,7 @@
 
   - name: custom message
     debug:
-      msg: "{{ inventory_hostname }}\'s has space  < 500mb"
+      msg: "{{ inventory_hostname }} 's has space  < 500mb"
 
 ...
 

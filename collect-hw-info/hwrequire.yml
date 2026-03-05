@@ -1,12 +1,12 @@
 ---
 - name: Collect information
-  become: yes
-  hosts: clients
+  become: true
+  hosts: all
 
   tasks:
   - name: use template from list-hw-req.j2
     template: 
       src: hwrequire.j2
-      dest: hwrequire.txt
+      dest: /tmp/hwrequire.txt
 ...
 

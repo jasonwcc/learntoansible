@@ -1,0 +1,57 @@
+partitions:
+- device: /dev/sdb
+  number: 1
+  start: 1MiB
+  end: 1000MiB
+
+- device: /dev/sdb
+  number: 2
+  start: 1001MiB
+  end: 2000MiB
+  
+- device: /dev/sdc
+  number: 1
+  start: 1MiB
+  end: 2000MiB
+
+- device: /dev/sdc
+  number: 2
+  start: 2001MiB
+  end: 3000MiB
+
+volume_groups:
+- name: apache-vg
+  devices:
+  - /dev/sdb1
+  - /dev/sdc1
+
+- name: database-vg
+  devices:
+  - /dev/sdb2
+  - /dev/sdc2
+
+logical_volumes:
+- name: lv1
+  size: 110M
+  vgroup: apache-vg
+  fstype: ex3
+  mount_path: /var/log/httpd
+
+- name: lv2
+  size: 120M
+  vgroup: apache-vg
+  fstype: ex4
+  mount_path: /etc/httpd/conf.d/ssl
+
+- name: lv3
+  size: 210M
+  vgroup: database-vg
+  fstype: ex3
+  mount_path: /databases
+
+- name: lv4
+  vgroup: database-vg
+  mount_path: /databases/logs
+  fstype: ex4
+  size: 220M
+
