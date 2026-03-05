@@ -1,2 +1,0 @@
-root	devops
-https://rh1.material.example.com/
