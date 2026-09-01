@@ -1,0 +1,20 @@
+---
+- name: Work with Lists
+  become: true
+  hosts: localhost
+  gather_facts: yes
+
+  tasks:
+  - name: E01 
+    copy:
+      content: |
+        line 1
+        line 2
+      dest: /tmp/copy-e01.txt
+
+  - name: E02 
+    copy:
+      content: >
+        line 1
+        line 2
+      dest: /tmp/copy-e02.txt

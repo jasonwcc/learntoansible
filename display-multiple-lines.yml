@@ -1,0 +1,17 @@
+---
+- name: Work with Lists
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+  - name: E01 
+    debug:
+      msg: |
+        line 1
+        line 2
+
+  - name: E02 
+    debug:
+      msg: >
+        line 1
+        line 2
