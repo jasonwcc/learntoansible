@@ -1,23 +1,23 @@
 ---
 - name: Create user using users-list.txt and dynamically assigned hash password
   become: true
-  hosts: webservers
+  hosts: localhost
 
   vars:
-  - hpass: "{{ 'redhat' | password_hash('sha512') }}"
+   hpass: "{{ 'redhat' | password_hash('sha512') }}"
 
-  vars_files: files/users-list.txt
+  vars_files: 
+  - files/users-list.txt
+  - files/groups-list.txt
 
   tasks:
-  - group:
-     name: "{{ item }}"
-    loop:
-    - test
-    - dev
+  - ansible.builtin.group:
+     name: "{{ item.groupname }}"
+    loop: "{{ users }}"
 
-  - user:
-     name: "{{ item.name }}"
-     group: "{{ item.groupn }}"
+  - ansible.builtin.user:
+     name: "{{ item.username }}"
+     group: "{{ item.groupname }}"
      password:  "{{ hpass }}"
     loop: "{{ users }}"
 ...

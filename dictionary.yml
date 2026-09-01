@@ -3,6 +3,7 @@
   hosts: localhost
   gather_facts: no
   vars_files: dictionary.txt
+  #vars_files: files/users-list.txt
 
   tasks:
   - name: E01 - showing users

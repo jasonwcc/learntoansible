@@ -1,5 +1,5 @@
 users:
-- username: nfs-user1
+- username: ffs-user1
   groupname: sales_g
   shellname: /bin/bash
   use_sudo: no

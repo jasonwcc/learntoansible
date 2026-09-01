@@ -1,0 +1,5 @@
+groups:
+- groupname: hr_g
+  gid: 1001
+- groupname: sales_g
+  gid: 1001
