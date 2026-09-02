@@ -1,0 +1,27 @@
+# Copy always copy file from control node to managed nodes
+- hosts: server_a
+  tasks:
+  - name: Copy file to a different host than the play target
+    ansible.builtin.copy:
+      src: /tmp/local_config.conf
+      dest: /etc/app/config.conf
+#
+# This pattern changes the destination server mid-playbook. The file /tmp/local_config.conf must exist on your Ansible controller node.
+- hosts: server_a
+  tasks:
+  - name: Copy file to a different host than the play target
+    ansible.builtin.copy:
+      src: /tmp/local_config.conf
+      dest: /etc/app/config.conf
+    delegate_to: server_b
+
+# If the file is already sitting on the delegated server, you must use remote_src: true. This instructs Ansible to perform a local copy operation entirely inside the delegated server.
+- hosts: server_a
+  tasks:
+  - name: Perform local copy operation entirely wihin delegated node
+    ansible.builtin.copy:
+      src: /opt/backup/app.conf
+      dest: /etc/app/config.conf
+      remote_src: true
+    delegate_to: target_b.example.com
+

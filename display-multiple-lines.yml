@@ -4,14 +4,20 @@
   gather_facts: no
 
   tasks:
-  - name: E01 
+  - name: E01 Using |
     debug:
       msg: |
         line 1
         line 2
 
-  - name: E02 
+  - name: E02 Using >
     debug:
       msg: >
+        line 1
+        line 2
+
+  - name: E03 Using >-
+    debug:
+      msg: >-
         line 1
         line 2

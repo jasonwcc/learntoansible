@@ -1,0 +1,9 @@
+- name: Add line to /tmp/file
+  hosts: localhost
+  tasks:
+  - lineinfile:
+      path: files/lineinfile.txt
+#     insertbefore: "^# inserthere"
+      insertafter: "^# inserthere"
+      line: "added by ansible @{{ ansible_date_time.iso8601 }}"
+      backup: false # by default is false, true will create a backup copy, each time there are changes

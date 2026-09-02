@@ -1,0 +1,11 @@
+---
+- name: Sync data between two remote hosts
+  hosts: server_b
+  tasks:
+    - name: Push data from Server A to Server B
+      ansible.posix.synchronize:
+        src: /path/to/source/dir/
+        dest: /path/to/destination/dir/
+        mode: push
+      delegate_to: server_a
+...
