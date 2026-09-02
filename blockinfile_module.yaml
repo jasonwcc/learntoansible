@@ -4,7 +4,7 @@
 
   tasks:
   - blockinfile:
-     path: files/sample.txt
+     path: files/blockinfile.txt
      block: |
        First line in additional block of text
        Second line ...
