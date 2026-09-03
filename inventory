@@ -1,4 +1,7 @@
-server[a:c]
+servera
+serverb
+serverc
+serverd
 #node1 ansible_host=r9s1.example.com
 #node2 ansible_host=r9s2.example.com
 #node3 ansible_host=r9s3.example.com
@@ -24,3 +27,5 @@ serverc
 #[proxy]
 #node1
 #node2
+[dbservers:vars]
+var1=100

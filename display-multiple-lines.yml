@@ -1,6 +1,6 @@
 ---
 - name: Work with Lists
-  hosts: localhost
+  hosts: all
   gather_facts: no
 
   tasks:
@@ -21,3 +21,7 @@
       msg: >-
         line 1
         line 2
+
+  - name: E03 Using >-
+    debug:
+      var:  var1
