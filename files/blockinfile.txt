@@ -1,4 +1,14 @@
 A quick brown
+# BEGIN ANSIBLE MANAGED BLOCK
+First line in additional block of text
+Second line ...
+Update on 2026-09-03T01:28:27Z
+# END ANSIBLE MANAGED BLOCK
+##<<-- Start of added lines -->> By J
+First line in additional block of text
+Second line ...
+Update on 2026-09-03T01:29:18Z
+##<<-- End of added lines -->> By J
 fox jumped
 over the lazy dog and cat.
 And she never gets tired and repeat again.

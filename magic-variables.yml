@@ -11,4 +11,11 @@
       owner: root
       group: root
       mode: '0666'
+  - name: display 
+    shell: 
+      cmd: cat /tmp/information.txt
+    register: msg
+  - debug:
+      var: msg
 ...
+

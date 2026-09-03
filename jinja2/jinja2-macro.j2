@@ -1,0 +1,12 @@
+{% macro render(form) %}
+{% set ns = namespace(count=0) %}
+{% for fruit in fruits %}
+{% if fruit == 'carrot' %}
+    - {{ fruit }} (No number)
+{% else %}
+  {% set ns.count = ns.count + 1 %}
+  {{ ns.count }}. {{ fruit }}
+{% endif %}
+{% endfor %}
+{% endmacro %}
+{{ render(my_form)|indent(3, True) }}

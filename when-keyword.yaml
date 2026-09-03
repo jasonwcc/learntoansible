@@ -1,0 +1,81 @@
+- name: Using the when keyword for different purposes
+  hosts: all
+  tasks:
+
+  - name: Run task on a specific host
+    ansible.builtin.debug:
+    msg: "This is server01"
+    when: inventory_hostname == "node1"
+
+  - name: Run task if hostname contains 'web'
+    ansible.builtin.debug:
+    msg: "Found web in hostname"
+    when: inventory_hostname is search("web")
+
+  - name: Run task if hostname contains 'db'
+    ansible.builtin.debug:
+    msg: "Found db in hostname"
+    when: "'db' in inventory_hostname"
+
+  - name: Run task only if OS is Debian AND memory is greater than 2GB
+    ansible.builtin.debug:
+      msg: "System meets requirements"
+    when:
+      - ansible_facts['os_family'] == "Debian"
+      - ansible_facts['memtotal_mb'] > 2048
+
+  - name: Run task only if OS is Debian AND memory is greater than 2GB
+    ansible.builtin.debug:
+      msg: "System meets requirements"
+    when: ansible_facts['os_family'] == "Debian" and ansible_facts['memtotal_mb'] > 2048
+
+  - name: Run task if OS is Ubuntu OR CentOS
+    ansible.builtin.debug:
+      msg: "Target OS matches"
+    when: ansible_facts['distribution'] == "Ubuntu" or ansible_facts['distribution'] == "CentOS"        
+
+  - name: Complex criteria evaluation
+    ansible.builtin.debug:
+      msg: "System matches complex requirements"
+    when: >
+      (ansible_facts['os_family'] == "RedHat" and ansible_facts['distribution_major_version'] == "8")
+      or
+      (ansible_facts['os_family'] == "Debian" and env_type == "production")
+
+  - name: Run task if any group name contains keyword
+    ansible.builtin.debug:
+      msg: "Found matching group"
+    when: group_names | select('search', 'servers') | list | count > 0
+
+  - name: Run task if exact group matches
+    ansible.builtin.debug:
+      msg: "Host is in exact group"
+    when: "'my_exact_group_name' in group_names"
+
+  - name: Run task if host is in BOTH webservers and staging
+    ansible.builtin.debug:
+      msg: "Host is in both webservers and staging"
+    when:
+      - "'webservers' in group_names"
+      - "'staging' in group_names"
+    # Alternatively use Intersection (like above AND match): True if the host is in all target groups
+    when: "['webservers', 'staging'] | intersect(group_names) | length == 2"
+
+  - name: Run task if host is in webservers OR production
+    ansible.builtin.debug:
+      msg: "Host belongs to webservers or production"
+    when: "'webservers' in group_names or 'production' in group_names"
+    # Alternatively using Intersection
+    when: "['webservers', 'production'] | intersect(group_names) | length > 0"
+
+  - name: Configure specific packages
+    ansible.builtin.debug:
+      msg: "Installing {{ item.name }}"
+    loop:
+      - { name: 'nginx', type: 'web', enabled: true }
+      - { name: 'mysql', type: 'db', enabled: false }
+      - { name: 'apache', type: 'web', enabled: false }
+    when:
+      - item.type == 'web'
+      - item.enabled == true
+

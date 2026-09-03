@@ -16,6 +16,6 @@
   tasks:
   - name: Using template module
     template:
-      src: jinja2-for-countv2.j2
+      src: jinja2-remove-whitespaces.j2
       dest: /tmp/jinja2-for-count.txt
 

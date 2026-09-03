@@ -1,5 +1,5 @@
 ---
-- name: Add additional lines to files/sample.txt
+- name: Add additional lines to files/blockinfile.txt
   hosts: localhost
 
   tasks:
@@ -10,8 +10,8 @@
        Second line ...
        Update on {{ ansible_date_time.iso8601 }}
      state: present
-     marker: "{mark}"
-     marker_begin: "<<-- Start of added lines -->>"
-     marker_end: "<<-- End of added lines -->>"
+     marker: "#{mark} By J"
+     marker_begin: "#<<-- Start of added lines -->>"
+     marker_end: "#<<-- End of added lines -->>"
      insertbefore: "fox"
 ...

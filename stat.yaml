@@ -1,5 +1,5 @@
 - name: Use stat module
-  hosts: node1
+  hosts: servera
 
   vars:
     filename: "/etc/hosts"

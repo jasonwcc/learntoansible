@@ -1,3 +1,4 @@
+server[a:c]
 #node1 ansible_host=r9s1.example.com
 #node2 ansible_host=r9s2.example.com
 #node3 ansible_host=r9s3.example.com
@@ -9,17 +10,17 @@
 #node3 ansible_host=serverc
 #node4 ansible_host=serverd
 
-[web_servers]
-node2
-node3
-
 [webservers]
-node2
-node3
-
+servera
+serverd
+#node2
+#node3
+#
 [dbservers]
-node2
-
-[proxy]
-node1
-node2
+serverb
+serverc
+#node2
+#
+#[proxy]
+#node1
+#node2
